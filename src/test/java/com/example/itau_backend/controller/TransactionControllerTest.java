@@ -13,6 +13,8 @@ import org.springframework.test.web.servlet.client.RestTestClient;
 
 import tools.jackson.databind.ObjectMapper;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 @SpringBootTest
 @AutoConfigureRestTestClient
 public class TransactionControllerTest {
@@ -43,19 +45,58 @@ public class TransactionControllerTest {
         .uri(uri)
         .body(body)
         .exchange()
-        .expectStatus().isCreated();
+        .expectStatus().isCreated()
+        .expectBody().isEmpty();
+  }
+
+  @ParameterizedTest
+  @MethodSource("com.example.itau_backend.TestBodyFactory#provideIllegalTransactionPostBody")
+  public void postTransactionWithIllegalBodyShouldReturn422(Map<String, Object> body) {
+    final String uri = "/transacao";
+
+    var result = rtc.post()
+        .uri(uri)
+        .body(body)
+        .exchange()
+        .returnResult();
+
+    try {
+      assertThat(result.getStatus()).isEqualTo(HttpStatus.UNPROCESSABLE_CONTENT);
+      assertThat(result.getResponseBodyContent()).isNullOrEmpty();
+    } catch (AssertionError e) {
+      System.out.println("----- TEST FAILED ------");
+      System.out.println("body sent:\n" + body);
+      System.out.println("response status: \n" + result.getStatus());
+      System.out.println("response body: \n" + new String(result.getResponseBodyContent()));
+      System.out.println("------------------------");
+
+      throw e;
+    }
   }
 
   @ParameterizedTest
   @MethodSource("com.example.itau_backend.TestBodyFactory#provideInvalidTransactionPostBody")
-  public void postTransactionWithInvalidBodyShouldReturn422(Map<String, Object> body) {
+  public void postTransactionWithInvalidBodyShouldReturn400(Map<String, Object> body) {
     final String uri = "/transacao";
 
-    rtc.post()
+    var result = rtc.post()
         .uri(uri)
         .body(body)
         .exchange()
-        .expectStatus().isEqualTo(HttpStatus.UNPROCESSABLE_CONTENT);
+        .returnResult();
+
+    try {
+      assertThat(result.getStatus()).isEqualTo(HttpStatus.BAD_REQUEST);
+      assertThat(result.getResponseBodyContent()).isNullOrEmpty();
+    } catch (AssertionError e) {
+      System.out.println("----- TEST FAILED ------");
+      System.out.println("body sent:\n" + body);
+      System.out.println("response status: \n" + result.getStatus());
+      System.out.println("response body: \n" + new String(result.getResponseBodyContent()));
+      System.out.println("------------------------");
+
+      throw e;
+    }
   }
 
   @Test
@@ -65,7 +106,7 @@ public class TransactionControllerTest {
     rtc.post()
         .uri(uri)
         .exchange()
-        .expectStatus().isBadRequest();
+        .expectStatus().isBadRequest()
+        .expectBody().isEmpty();
   }
-
 }
