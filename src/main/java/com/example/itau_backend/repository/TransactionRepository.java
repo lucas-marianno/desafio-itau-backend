@@ -4,6 +4,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.stream.Stream;
 
 import org.springframework.stereotype.Repository;
 
@@ -36,5 +37,18 @@ public class TransactionRepository {
     final var found = memory.get(id);
 
     return found == null ? Optional.empty() : Optional.of(found);
+  }
+
+  public Stream<Transaction> findAll() {
+    return memory.values().stream();
+  }
+
+  public Optional<Transaction> delete(long id) {
+    final var deleted = memory.remove(id);
+    return deleted == null ? Optional.empty() : Optional.of(deleted);
+  }
+
+  public void deleteAll() {
+    memory.clear();
   }
 }
