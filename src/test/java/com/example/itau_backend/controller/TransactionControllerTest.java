@@ -1,5 +1,8 @@
 package com.example.itau_backend.controller;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
+import java.time.OffsetDateTime;
 import java.util.Map;
 
 import org.junit.jupiter.api.AfterEach;
@@ -13,11 +16,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.test.web.servlet.client.RestTestClient;
 
 import com.example.itau_backend.TestFactory;
+import com.example.itau_backend.dto.outbound.TransactionStatisticsResponse;
+import com.example.itau_backend.model.Transaction;
 import com.example.itau_backend.repository.TransactionRepository;
 
 import tools.jackson.databind.ObjectMapper;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 @AutoConfigureRestTestClient
@@ -127,7 +130,7 @@ public class TransactionControllerTest {
   }
 
   @Test
-  public void deleteTransactionsShouldClearDbAndReturn200() {
+  public void deleteTransactionsShouldReturn200AndClearDb() {
     final int nOfTransaction = 10;
     final var transactions = TestFactory.provideValidTransaction(nOfTransaction);
 
@@ -144,5 +147,50 @@ public class TransactionControllerTest {
         .expectBody().isEmpty();
 
     assertThat(repo.findAll().count()).isEqualTo(0);
+  }
+
+  @Test
+  public void getStatisticsShouldReturn200() {
+    final String uri = "/estatistica";
+
+    rtc.get()
+        .uri(uri)
+        .exchange()
+        .expectStatus().isOk()
+        .expectBody(TransactionStatisticsResponse.class);
+  }
+
+  @Test
+  public void getStatisticsWithSecondsShouldReturn200() {
+    final String uri = "/estatistica?segundos=200";
+
+    rtc.get()
+        .uri(uri)
+        .exchange()
+        .expectStatus().isOk()
+        .expectBody(TransactionStatisticsResponse.class);
+  }
+
+  @Test
+  public void getStatisticsShouldReturnAccurateStats() {
+    final var transactions = TestFactory.provideValidTransaction(10000);
+    final var lastSeconds = OffsetDateTime.now().minusSeconds(60);
+
+    final var stats = TransactionStatisticsResponse
+        .fromDoubleSummaryStatistics(
+            transactions
+                .peek(repo::save)
+                .filter(t -> t.dataHora().isAfter(lastSeconds))
+                .mapToDouble(Transaction::valor)
+                .summaryStatistics());
+
+    final String uri = "/estatistica";
+
+    rtc.get()
+        .uri(uri)
+        .exchange()
+        .expectStatus().isOk()
+        .expectBody(TransactionStatisticsResponse.class)
+        .isEqualTo(stats);
   }
 }
