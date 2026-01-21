@@ -1,11 +1,15 @@
 package com.example.itau_backend;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.stream.Stream;
 
-public class TestBodyFactory {
+import com.example.itau_backend.model.Transaction;
+
+public class TestFactory {
   private static final Random rnd = new Random();
 
   private static final String futureDateTime = OffsetDateTime.now().plusDays(1).toString();
@@ -59,4 +63,21 @@ public class TestBodyFactory {
         Map.of(valorKey, positiveNonZero, dataHoraKey, "abc"));
   }
 
+  public static Stream<Transaction> provideValidTransaction(final int nOfTransactions) {
+    List<Transaction> s = new ArrayList<>(nOfTransactions);
+
+    for (int i = 0; i < nOfTransactions; i++) {
+      s.add(provideValidTransaction());
+    }
+
+    return s.stream();
+  }
+
+  public static Transaction provideValidTransaction() {
+    final var rnd = new Random();
+    return Transaction.builder()
+        .dataHora(OffsetDateTime.now().minusSeconds(rnd.nextInt(0, 1000)))
+        .valor(rnd.nextDouble(0, 1_000_000))
+        .build();
+  }
 }

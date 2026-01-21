@@ -2,14 +2,10 @@ package com.example.itau_backend.repository;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import java.time.OffsetDateTime;
-import java.util.Random;
-import java.util.stream.Stream;
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import com.example.itau_backend.model.Transaction;
+import com.example.itau_backend.TestFactory;
 
 @DisplayName("Testing TransactionRepository")
 public class TransactionRepositoryTest {
@@ -30,11 +26,7 @@ public class TransactionRepositoryTest {
 
   @Test
   void shouldCreateAndFindTransaction() {
-    final var t = Transaction.builder()
-        .dataHora(OffsetDateTime.now())
-        .valor(12345.6)
-        .build();
-
+    final var t = TestFactory.provideValidTransaction();
     final var saved = repo.save(t);
 
     assertThat(saved.id()).isNotNull();
@@ -49,11 +41,10 @@ public class TransactionRepositoryTest {
 
   @Test
   void shouldFindAllTransactions() {
-
     assertThat(repo.findAll()).isNullOrEmpty();
 
-    final var t1 = Transaction.builder().dataHora(OffsetDateTime.now()).valor(12345.6).build();
-    final var t2 = Transaction.builder().dataHora(OffsetDateTime.now()).valor(5432.1).build();
+    final var t1 = TestFactory.provideValidTransaction();
+    final var t2 = TestFactory.provideValidTransaction();
 
     final var saved1 = repo.save(t1);
     final var saved2 = repo.save(t2);
@@ -69,13 +60,35 @@ public class TransactionRepositoryTest {
     assertThat(all.get(1).valor()).isEqualTo(t2.valor());
   }
 
-  Stream<Transaction> provideValidTransaction() {
-    final var rnd = new Random();
-    return Stream.of(
-        Transaction.builder().dataHora(OffsetDateTime.now()).valor(rnd.nextDouble(0, 1_000_000)).build(),
-        Transaction.builder().dataHora(OffsetDateTime.now()).valor(rnd.nextDouble(0, 1_000_000)).build(),
-        Transaction.builder().dataHora(OffsetDateTime.now()).valor(rnd.nextDouble(0, 1_000_000)).build(),
-        Transaction.builder().dataHora(OffsetDateTime.now()).valor(rnd.nextDouble(0, 1_000_000)).build(),
-        Transaction.builder().dataHora(OffsetDateTime.now()).valor(rnd.nextDouble(0, 1_000_000)).build());
+  @Test
+  void shouldDeleteATransaction() {
+    final var t1 = TestFactory.provideValidTransaction();
+    final var t2 = TestFactory.provideValidTransaction();
+
+    final var saved1 = repo.save(t1);
+    final var saved2 = repo.save(t2);
+
+    repo.delete(saved1.id());
+
+    final var allT = repo.findAll().toList();
+
+    assertThat(allT).hasSize(1);
+    assertThat(allT.getFirst()).isEqualTo(saved2);
+  }
+
+  @Test
+  void shouldDeleteAllTransactions() {
+    final var expectedLen = 30;
+
+    final var transactions = TestFactory.provideValidTransaction(expectedLen);
+    transactions.forEach(repo::save);
+
+    final var memBefore = repo.findAll().toList();
+    assertThat(memBefore).hasSize(expectedLen);
+
+    repo.deleteAll();
+
+    final var memAfter = repo.findAll().toList();
+    assertThat(memAfter).hasSize(0);
   }
 }

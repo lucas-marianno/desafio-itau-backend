@@ -23,7 +23,7 @@ public class TransactionControllerTest {
   RestTestClient rtc;
 
   @ParameterizedTest
-  @MethodSource("com.example.itau_backend.TestBodyFactory#provideValidTransactionPostBody")
+  @MethodSource("com.example.itau_backend.TestFactory#provideValidTransactionPostBody")
   public void sanityCheck(Map<String, Object> body) {
     final String uri = "/hello";
     final String jsonBody = (new ObjectMapper()).writeValueAsString(body);
@@ -37,7 +37,7 @@ public class TransactionControllerTest {
   }
 
   @ParameterizedTest
-  @MethodSource("com.example.itau_backend.TestBodyFactory#provideValidTransactionPostBody")
+  @MethodSource("com.example.itau_backend.TestFactory#provideValidTransactionPostBody")
   public void postTransactionShouldReturn201(Map<String, Object> body) {
     final String uri = "/transacao";
 
@@ -50,7 +50,7 @@ public class TransactionControllerTest {
   }
 
   @ParameterizedTest
-  @MethodSource("com.example.itau_backend.TestBodyFactory#provideIllegalTransactionPostBody")
+  @MethodSource("com.example.itau_backend.TestFactory#provideIllegalTransactionPostBody")
   public void postTransactionWithIllegalBodyShouldReturn422(Map<String, Object> body) {
     final String uri = "/transacao";
 
@@ -75,7 +75,7 @@ public class TransactionControllerTest {
   }
 
   @ParameterizedTest
-  @MethodSource("com.example.itau_backend.TestBodyFactory#provideInvalidTransactionPostBody")
+  @MethodSource("com.example.itau_backend.TestFactory#provideInvalidTransactionPostBody")
   public void postTransactionWithInvalidBodyShouldReturn400(Map<String, Object> body) {
     final String uri = "/transacao";
 
