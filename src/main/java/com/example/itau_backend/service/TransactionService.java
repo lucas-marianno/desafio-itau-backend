@@ -30,4 +30,8 @@ public class TransactionService {
         .dataHora(request.dataHora())
         .build());
   }
+
+  public void deleteAll() {
+    repo.deleteAll();
+  }
 }
