@@ -17,8 +17,8 @@ import org.springframework.test.web.servlet.client.RestTestClient;
 
 import com.example.itau_backend.TestFactory;
 import com.example.itau_backend.dto.outbound.TransactionStatisticsResponse;
-import com.example.itau_backend.model.Transaction;
 import com.example.itau_backend.repository.TransactionRepository;
+import com.example.itau_backend.util.BigDecimalSummaryStatistics;
 
 import tools.jackson.databind.ObjectMapper;
 
@@ -173,16 +173,15 @@ public class TransactionControllerTest {
 
   @Test
   public void getStatisticsShouldReturnAccurateStats() {
-    final var transactions = TestFactory.provideValidTransaction(10000);
     final var lastSeconds = OffsetDateTime.now().minusSeconds(60);
+    final var transactions = TestFactory.provideValidTransaction(10000)
+        .filter(t -> t.dataHora().isAfter(lastSeconds))
+        .peek(repo::save);
 
     final var stats = TransactionStatisticsResponse
-        .fromDoubleSummaryStatistics(
-            transactions
-                .peek(repo::save)
-                .filter(t -> t.dataHora().isAfter(lastSeconds))
-                .mapToDouble(Transaction::valor)
-                .summaryStatistics());
+        .fromBigDecimalSummaryStatistics(
+            new BigDecimalSummaryStatistics(
+                transactions.map(t -> t.valor())));
 
     final String uri = "/estatistica";
 

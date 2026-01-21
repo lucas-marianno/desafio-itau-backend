@@ -1,14 +1,18 @@
 info:
-  name: inserir transacao (failed)
+  name: inserir transacao
   type: http
-  seq: 1
+  seq: 3
 
 http:
   method: POST
   url: http://localhost:8080/transacao
   body:
     type: json
-    data: ""
+    data: |-
+      {
+          "valor": 123.45,
+          "dataHora": "2020-08-07T12:34:56.789-03:00"
+      }
   auth: inherit
 
 settings:

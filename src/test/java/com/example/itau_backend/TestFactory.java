@@ -1,5 +1,6 @@
 package com.example.itau_backend;
 
+import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -77,7 +78,7 @@ public class TestFactory {
     final var rnd = new Random();
     return Transaction.builder()
         .dataHora(OffsetDateTime.now().minusSeconds(rnd.nextInt(0, 1000)))
-        .valor(rnd.nextDouble(0, 1_000_000))
+        .valor(BigDecimal.valueOf(rnd.nextDouble(0, 1_000_000)))
         .build();
   }
 }
