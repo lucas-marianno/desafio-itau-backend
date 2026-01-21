@@ -1,10 +1,13 @@
 package com.example.itau_backend.service;
 
 import java.time.OffsetDateTime;
+import java.util.List;
+import java.util.stream.Stream;
 
 import org.springframework.stereotype.Service;
 
 import com.example.itau_backend.dto.inbound.TransactionRequest;
+import com.example.itau_backend.dto.outbound.TransactionStatisticsResponse;
 import com.example.itau_backend.exception.exceptions.IllegalTransactionException;
 import com.example.itau_backend.model.Transaction;
 import com.example.itau_backend.repository.TransactionRepository;
@@ -33,5 +36,29 @@ public class TransactionService {
 
   public void deleteAll() {
     repo.deleteAll();
+  }
+
+  public TransactionStatisticsResponse getStatistics(int lastSeconds) {
+    final var recentTransactions = getMostRecent(lastSeconds).mapToDouble(Transaction::valor);
+    final var stats = recentTransactions.summaryStatistics();
+
+    return TransactionStatisticsResponse
+        .fromDoubleSummaryStatistics(stats);
+  }
+
+  public TransactionStatisticsResponse getStatistics() {
+    return getStatistics(60);
+  }
+
+  private Stream<Transaction> getMostRecent(int lastSeconds) {
+    final var s = OffsetDateTime.now().minusSeconds(lastSeconds);
+
+    return repo
+        .findAll()
+        .filter(t -> t.dataHora().isAfter(s));
+  }
+
+  public List<Transaction> findAll() {
+    return repo.findAll().toList();
   }
 }
