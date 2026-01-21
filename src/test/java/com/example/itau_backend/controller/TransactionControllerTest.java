@@ -2,6 +2,7 @@ package com.example.itau_backend.controller;
 
 import java.util.Map;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -10,6 +11,9 @@ import org.springframework.boot.resttestclient.autoconfigure.AutoConfigureRestTe
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.test.web.servlet.client.RestTestClient;
+
+import com.example.itau_backend.TestFactory;
+import com.example.itau_backend.repository.TransactionRepository;
 
 import tools.jackson.databind.ObjectMapper;
 
@@ -21,6 +25,14 @@ public class TransactionControllerTest {
 
   @Autowired
   RestTestClient rtc;
+
+  @Autowired
+  TransactionRepository repo;
+
+  @AfterEach
+  public void clearMemAfterEach() {
+    repo.deleteAll();
+  }
 
   @ParameterizedTest
   @MethodSource("com.example.itau_backend.TestFactory#provideValidTransactionPostBody")
@@ -47,6 +59,10 @@ public class TransactionControllerTest {
         .exchange()
         .expectStatus().isCreated()
         .expectBody().isEmpty();
+
+    final var mem = repo.findAll().toList();
+
+    assertThat(mem.size()).isGreaterThanOrEqualTo(1);
   }
 
   @ParameterizedTest
@@ -108,5 +124,25 @@ public class TransactionControllerTest {
         .exchange()
         .expectStatus().isBadRequest()
         .expectBody().isEmpty();
+  }
+
+  @Test
+  public void deleteTransactionsShouldClearDbAndReturn200() {
+    final int nOfTransaction = 10;
+    final var transactions = TestFactory.provideValidTransaction(nOfTransaction);
+
+    transactions.forEach(repo::save);
+
+    assertThat(repo.findAll().count()).isEqualTo(nOfTransaction);
+
+    final String uri = "/transacao";
+
+    rtc.delete()
+        .uri(uri)
+        .exchange()
+        .expectStatus().isOk()
+        .expectBody().isEmpty();
+
+    assertThat(repo.findAll().count()).isEqualTo(0);
   }
 }
