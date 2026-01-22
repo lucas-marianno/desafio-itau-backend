@@ -64,20 +64,28 @@ public class TestFactory {
         Map.of(valorKey, positiveNonZero, dataHoraKey, "abc"));
   }
 
-  public static Stream<Transaction> provideValidTransaction(final int nOfTransactions) {
-    List<Transaction> s = new ArrayList<>(nOfTransactions);
+  public static Stream<Transaction> provideValidTransactions(final int nOfTransactions) {
+    return provideValidTransactions(nOfTransactions, 60);
+  }
+
+  public static Stream<Transaction> provideValidTransactions(final int nOfTransactions, final int fromLastSeconds) {
+    final List<Transaction> s = new ArrayList<>(nOfTransactions);
 
     for (int i = 0; i < nOfTransactions; i++) {
-      s.add(provideValidTransaction());
+      s.add(provideValidTransaction(fromLastSeconds));
     }
 
     return s.stream();
   }
 
   public static Transaction provideValidTransaction() {
+    return provideValidTransaction(60);
+  }
+
+  public static Transaction provideValidTransaction(final int fromLastSeconds) {
     final var rnd = new Random();
     return Transaction.builder()
-        .dataHora(OffsetDateTime.now().minusSeconds(rnd.nextInt(0, 1000)))
+        .dataHora(OffsetDateTime.now().minusSeconds(rnd.nextInt(0, fromLastSeconds)))
         .valor(BigDecimal.valueOf(rnd.nextDouble(0, 1_000_000)))
         .build();
   }

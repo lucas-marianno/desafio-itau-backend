@@ -17,6 +17,7 @@ import org.springframework.test.web.servlet.client.RestTestClient;
 
 import com.example.itau_backend.TestFactory;
 import com.example.itau_backend.dto.outbound.TransactionStatisticsResponse;
+import com.example.itau_backend.model.Transaction;
 import com.example.itau_backend.repository.TransactionRepository;
 import com.example.itau_backend.util.BigDecimalSummaryStatistics;
 
@@ -132,7 +133,7 @@ public class TransactionControllerTest {
   @Test
   public void deleteTransactionsShouldReturn200AndClearDb() {
     final int nOfTransaction = 10;
-    final var transactions = TestFactory.provideValidTransaction(nOfTransaction);
+    final var transactions = TestFactory.provideValidTransactions(nOfTransaction);
 
     transactions.forEach(repo::save);
 
@@ -174,22 +175,25 @@ public class TransactionControllerTest {
   @Test
   public void getStatisticsShouldReturnAccurateStats() {
     final var lastSeconds = OffsetDateTime.now().minusSeconds(60);
-    final var transactions = TestFactory.provideValidTransaction(10000)
-        .filter(t -> t.dataHora().isAfter(lastSeconds))
+
+    // generate and save to repo
+    final var transactions = TestFactory
+        .provideValidTransactions(10000, 30)
         .peek(repo::save);
 
-    final var stats = TransactionStatisticsResponse
-        .fromBigDecimalSummaryStatistics(
-            new BigDecimalSummaryStatistics(
-                transactions.map(t -> t.valor())));
+    // manually generate statsDto
+    final var bigDecimalStream = transactions
+        .filter(t -> t.dataHora().isAfter(lastSeconds))
+        .map(Transaction::valor);
+    final var stats = new BigDecimalSummaryStatistics(bigDecimalStream);
+    final var statsDto = TransactionStatisticsResponse.fromBigDecimalSummaryStatistics(stats);
 
-    final String uri = "/estatistica";
-
+    // compare to api response
     rtc.get()
-        .uri(uri)
+        .uri("/estatistica")
         .exchange()
         .expectStatus().isOk()
         .expectBody(TransactionStatisticsResponse.class)
-        .isEqualTo(stats);
+        .isEqualTo(statsDto);
   }
 }

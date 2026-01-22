@@ -80,7 +80,7 @@ public class TransactionRepositoryTest {
   void shouldDeleteAllTransactions() {
     final var expectedLen = 30;
 
-    final var transactions = TestFactory.provideValidTransaction(expectedLen);
+    final var transactions = TestFactory.provideValidTransactions(expectedLen);
     transactions.forEach(repo::save);
 
     final var memBefore = repo.findAll().toList();
