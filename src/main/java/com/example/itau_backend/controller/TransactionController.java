@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.itau_backend.dto.inbound.TransactionRequest;
+import com.example.itau_backend.dto.outbound.HealthStatusResponse;
 import com.example.itau_backend.dto.outbound.TransactionStatisticsResponse;
 import com.example.itau_backend.model.Transaction;
+import com.example.itau_backend.service.HealthService;
 import com.example.itau_backend.service.TransactionService;
 
 import jakarta.validation.Valid;
@@ -26,7 +28,8 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/")
 public class TransactionController {
 
-  final TransactionService service;
+  final TransactionService transactionService;
+  final HealthService healthService;
 
   @PostMapping("/hello")
   public ResponseEntity<Map<String, Object>> hello(
@@ -38,14 +41,14 @@ public class TransactionController {
   public ResponseEntity<Void> saveTransaction(
       @Valid @RequestBody final TransactionRequest request) {
 
-    service.save(request);
+    transactionService.save(request);
 
     return ResponseEntity.status(HttpStatus.CREATED).build();
   }
 
   @DeleteMapping("/transacao")
   public ResponseEntity<Void> deleteAllTransaction() {
-    service.deleteAll();
+    transactionService.deleteAll();
 
     return ResponseEntity.ok().build();
   }
@@ -55,15 +58,20 @@ public class TransactionController {
       @RequestParam(required = false) Integer segundos) {
 
     final var stats = segundos == null
-        ? service.getStatistics()
-        : service.getStatistics(segundos);
+        ? transactionService.getStatistics()
+        : transactionService.getStatistics(segundos);
 
     return ResponseEntity.ok(stats);
   }
 
   @GetMapping("/debug/get-all")
   public ResponseEntity<List<Transaction>> getAll() {
-    return ResponseEntity.ok(service.findAll());
+    return ResponseEntity.ok(transactionService.findAll());
+  }
+
+  @GetMapping("/health")
+  public ResponseEntity<HealthStatusResponse> getHealth() {
+    return ResponseEntity.ok(healthService.getServerHealth());
   }
 
 }

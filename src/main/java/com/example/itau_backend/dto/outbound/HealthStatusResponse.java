@@ -5,24 +5,6 @@ import java.time.OffsetDateTime;
 
 import lombok.Builder;
 
-// healthcheck endpoint {
-//   basics:{
-//     status: UP or DOWN
-//     uptime:
-//     timestamp: the current servertime
-//   }
-//   system resources:{
-//     memory:{
-//       total available memory
-//       used memory
-//     }
-//     thread count:
-//   }
-//   storage:{
-//     n of records stored
-//     last transaction timestamp
-//   }
-// }
 @Builder
 public record HealthStatusResponse(
     ServerStatus serverStatus,
@@ -30,18 +12,21 @@ public record HealthStatusResponse(
     OffsetDateTime serverLocalTime,
     SystemResources systemResources,
     StorageStatus storageStatus
-
 ) {
-  enum ServerStatus { UP, DOWN }
 
+  @Builder
   public record SystemResources(
-      Long totalServerMemory,
-      Long availableMemory,
+      String totalServerMemory,
+      String usedMemory,
+      String serverMemoryUsage,
       Integer threadCount
   ) { }
 
+  @Builder
   public record StorageStatus(
-      Integer totalRecords,
-      OffsetDateTime lastTransactionTimestamp
+      Long totalRecords,
+      String elapsedTimeFromLastRequest
   ) { }
+
+  public enum ServerStatus { UP, DOWN }
 }

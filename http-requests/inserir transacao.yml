@@ -10,10 +10,16 @@ http:
     type: json
     data: |-
       {
-          "valor": 123.45,
-          "dataHora": "2020-08-07T12:34:56.789-03:00"
+          "valor": 1,
+          "dataHora": "2025-08-07T12:34:56.789-03:00"
       }
   auth: inherit
+
+runtime:
+  assertions:
+    - expression: ""
+      operator: eq
+      value: ""
 
 settings:
   encodeUrl: true
