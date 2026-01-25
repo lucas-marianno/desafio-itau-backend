@@ -16,12 +16,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.test.web.servlet.client.RestTestClient;
 
 import com.example.itau_backend.TestFactory;
+import com.example.itau_backend.dto.outbound.HealthStatusResponse;
 import com.example.itau_backend.dto.outbound.TransactionStatisticsResponse;
 import com.example.itau_backend.model.Transaction;
 import com.example.itau_backend.repository.TransactionRepository;
 import com.example.itau_backend.util.BigDecimalSummaryStatistics;
-
-import tools.jackson.databind.ObjectMapper;
 
 @SpringBootTest
 @AutoConfigureRestTestClient
@@ -38,19 +37,7 @@ public class TransactionControllerTest {
     repo.deleteAll();
   }
 
-  @ParameterizedTest
-  @MethodSource("com.example.itau_backend.TestFactory#provideValidTransactionPostBody")
-  public void sanityCheck(Map<String, Object> body) {
-    final String uri = "/hello";
-    final String jsonBody = (new ObjectMapper()).writeValueAsString(body);
-
-    rtc.post()
-        .uri(uri)
-        .body(body)
-        .exchange()
-        .expectStatus().isOk()
-        .expectBody().json(jsonBody);
-  }
+  // POST TRANSACATION ENDPOINT
 
   @ParameterizedTest
   @MethodSource("com.example.itau_backend.TestFactory#provideValidTransactionPostBody")
@@ -130,6 +117,8 @@ public class TransactionControllerTest {
         .expectBody().isEmpty();
   }
 
+  // DELETE ENDPOINT
+
   @Test
   public void deleteTransactionsShouldReturn200AndClearDb() {
     final int nOfTransaction = 10;
@@ -149,6 +138,8 @@ public class TransactionControllerTest {
 
     assertThat(repo.findAll().count()).isEqualTo(0);
   }
+
+  // STATISTICS ENDPOINT
 
   @Test
   public void getStatisticsShouldReturn200() {
@@ -195,5 +186,18 @@ public class TransactionControllerTest {
         .expectStatus().isOk()
         .expectBody(TransactionStatisticsResponse.class)
         .isEqualTo(statsDto);
+  }
+
+  // HEALTH ENDPOINT
+  @Test
+  public void getHealthShouldReturn200() {
+    final var uri = "/health";
+
+    rtc.get()
+        .uri(uri)
+        .exchange()
+        .expectStatus().isOk()
+        .expectBody(HealthStatusResponse.class);
+
   }
 }
