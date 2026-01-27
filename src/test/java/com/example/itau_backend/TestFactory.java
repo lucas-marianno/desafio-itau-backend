@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.stream.Stream;
 
-import com.example.itau_backend.model.Transaction;
+import com.example.itau_backend.api.model.Transaction;
 
 public class TestFactory {
   private static final Random rnd = new Random();
