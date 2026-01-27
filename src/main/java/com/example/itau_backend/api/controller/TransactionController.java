@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.itau_backend.api.dto.inbound.TransactionRequest;
+import com.example.itau_backend.api.dto.TransactionRequest;
 import com.example.itau_backend.api.service.TransactionService;
 
 import jakarta.validation.Valid;

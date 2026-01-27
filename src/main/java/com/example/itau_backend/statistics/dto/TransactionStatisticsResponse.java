@@ -1,4 +1,4 @@
-package com.example.itau_backend.api.dto.outbound;
+package com.example.itau_backend.statistics.dto;
 
 import java.math.BigDecimal;
 

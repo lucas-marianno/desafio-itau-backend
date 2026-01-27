@@ -2,17 +2,13 @@ package com.example.itau_backend.api.service;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
-import java.util.List;
-import java.util.stream.Stream;
 
 import org.springframework.stereotype.Service;
 
-import com.example.itau_backend.api.dto.inbound.TransactionRequest;
-import com.example.itau_backend.api.dto.outbound.TransactionStatisticsResponse;
+import com.example.itau_backend.api.dto.TransactionRequest;
 import com.example.itau_backend.api.exception.exceptions.IllegalTransactionException;
 import com.example.itau_backend.api.model.Transaction;
 import com.example.itau_backend.api.repository.TransactionRepository;
-import com.example.itau_backend.common.util.BigDecimalSummaryStatistics;
 
 @Service
 public class TransactionService {
@@ -38,28 +34,5 @@ public class TransactionService {
 
   public void deleteAll() {
     repo.deleteAll();
-  }
-
-  public TransactionStatisticsResponse getStatistics(int lastSeconds) {
-    final var recentTransactions = getMostRecent(lastSeconds);
-    final var stats = new BigDecimalSummaryStatistics(recentTransactions.map(Transaction::valor));
-
-    return TransactionStatisticsResponse.fromBigDecimalSummaryStatistics(stats);
-  }
-
-  public TransactionStatisticsResponse getStatistics() {
-    return getStatistics(60);
-  }
-
-  private Stream<Transaction> getMostRecent(int lastSeconds) {
-    final var s = OffsetDateTime.now().minusSeconds(lastSeconds);
-
-    return repo
-        .findAll()
-        .filter(t -> t.dataHora().isAfter(s));
-  }
-
-  public List<Transaction> findAll() {
-    return repo.findAll().toList();
   }
 }

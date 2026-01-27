@@ -1,4 +1,4 @@
-package com.example.itau_backend.api.dto.inbound;
+package com.example.itau_backend.api.dto;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
