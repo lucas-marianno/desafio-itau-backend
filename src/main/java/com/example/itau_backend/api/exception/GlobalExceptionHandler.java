@@ -6,6 +6,7 @@ import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 import com.example.itau_backend.api.exception.exceptions.IllegalTransactionException;
 
@@ -25,5 +26,11 @@ public class GlobalExceptionHandler {
   @ExceptionHandler(MethodArgumentNotValidException.class)
   ResponseEntity<Void> handleMethodArgumentNotValid(MethodArgumentNotValidException e) {
     return ResponseEntity.badRequest().build();
+  }
+
+  @ExceptionHandler(NoResourceFoundException.class)
+  ResponseEntity<Void> handleResourceNotFound(NoResourceFoundException e) {
+    return ResponseEntity.notFound().build();
+
   }
 }

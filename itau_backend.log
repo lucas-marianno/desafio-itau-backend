@@ -1,0 +1,1128 @@
+2026-01-26T22:23:11.780-03:00  INFO 15901 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : Starting ItauBackendApplication using Java 25.0.2 with PID 15901 (/home/lucas/git-clones/java/itau-backend/target/classes started by lucas in /home/lucas/git-clones/java/itau-backend)
+2026-01-26T22:23:11.782-03:00  INFO 15901 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-01-26T22:23:11.806-03:00  INFO 15901 --- [itau-backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-26T22:23:11.807-03:00  INFO 15901 --- [itau-backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-26T22:23:12.251-03:00  INFO 15901 --- [itau-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-01-26T22:23:12.259-03:00  INFO 15901 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-26T22:23:12.259-03:00  INFO 15901 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-01-26T22:23:12.273-03:00  INFO 15901 --- [itau-backend] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 466 ms
+2026-01-26T22:23:12.462-03:00  INFO 15901 --- [itau-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-01-26T22:23:12.465-03:00  INFO 15901 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : Started ItauBackendApplication in 0.897 seconds (process running for 1.077)
+2026-01-26T22:23:44.303-03:00  INFO 15901 --- [itau-backend] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-26T22:23:44.303-03:00  INFO 15901 --- [itau-backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-26T22:23:44.304-03:00  INFO 15901 --- [itau-backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-01-26T22:24:33.820-03:00  INFO 15901 --- [itau-backend] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-26T22:24:33.823-03:00  INFO 15901 --- [itau-backend] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-01-26T22:44:36.432-03:00  WARN 16378 --- [itau-backend] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'statisticsController': Resolution of declared constructors on bean Class [com.example.itau_backend.statistics.controller.StatisticsController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@2c26c817] failed
+2026-01-26T22:44:36.451-03:00 ERROR 16378 --- [itau-backend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'statisticsController': Resolution of declared constructors on bean Class [com.example.itau_backend.statistics.controller.StatisticsController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@2c26c817] failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:367) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1321) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1218) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1184) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1121) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:993) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:620) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.1.jar:4.0.1]
+	at com.example.itau_backend.ItauBackendApplication.main(ItauBackendApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.1.jar:4.0.1]
+Caused by: java.lang.NoClassDefFoundError: StatisticsService
+	at java.base/java.lang.Class.getDeclaredConstructors0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredConstructors(Class.java:2985) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredConstructors(Class.java:2354) ~[na:na]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:362) ~[spring-beans-7.0.2.jar:7.0.2]
+	... 23 common frames omitted
+Caused by: java.lang.ClassNotFoundException: StatisticsService
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:547) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:123) ~[spring-boot-devtools-4.0.1.jar:4.0.1]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	... 27 common frames omitted
+
+2026-01-26T22:45:39.010-03:00  WARN 16378 --- [itau-backend] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionController': Lookup method resolution failed
+2026-01-26T22:45:39.012-03:00 ERROR 16378 --- [itau-backend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionController': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:481) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:351) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1321) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1218) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1184) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1121) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:993) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:620) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.1.jar:4.0.1]
+	at com.example.itau_backend.ItauBackendApplication.main(ItauBackendApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.1.jar:4.0.1]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.example.itau_backend.api.controller.TransactionController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@32a4dde7]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-7.0.2.jar:7.0.2]
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320) ~[spring-core-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:459) ~[spring-beans-7.0.2.jar:7.0.2]
+	... 24 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/example/itau_backend/api/dto/inbound/TransactionRequest
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3010) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2329) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-7.0.2.jar:7.0.2]
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.example.itau_backend.api.dto.inbound.TransactionRequest
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:547) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:123) ~[spring-boot-devtools-4.0.1.jar:4.0.1]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	... 30 common frames omitted
+
+2026-01-26T22:45:40.485-03:00  WARN 16378 --- [itau-backend] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionController': Lookup method resolution failed
+2026-01-26T22:45:40.487-03:00 ERROR 16378 --- [itau-backend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionController': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:481) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:351) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1321) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1218) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1184) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1121) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:993) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:620) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.1.jar:4.0.1]
+	at com.example.itau_backend.ItauBackendApplication.main(ItauBackendApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.1.jar:4.0.1]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.example.itau_backend.api.controller.TransactionController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@4d71d2f1]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-7.0.2.jar:7.0.2]
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320) ~[spring-core-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:459) ~[spring-beans-7.0.2.jar:7.0.2]
+	... 24 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: TransactionRequest
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3010) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2329) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-7.0.2.jar:7.0.2]
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: TransactionRequest
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:547) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:123) ~[spring-boot-devtools-4.0.1.jar:4.0.1]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	... 30 common frames omitted
+
+2026-01-26T22:45:42.958-03:00  WARN 16378 --- [itau-backend] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionController': Lookup method resolution failed
+2026-01-26T22:45:42.960-03:00 ERROR 16378 --- [itau-backend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionController': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:481) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:351) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1321) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1218) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1184) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1121) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:993) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:620) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.1.jar:4.0.1]
+	at com.example.itau_backend.ItauBackendApplication.main(ItauBackendApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.1.jar:4.0.1]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.example.itau_backend.api.controller.TransactionController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@48478ff0]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-7.0.2.jar:7.0.2]
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320) ~[spring-core-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:459) ~[spring-beans-7.0.2.jar:7.0.2]
+	... 24 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: TransactionRequest
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3010) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2329) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-7.0.2.jar:7.0.2]
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: TransactionRequest
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:547) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:123) ~[spring-boot-devtools-4.0.1.jar:4.0.1]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	... 30 common frames omitted
+
+2026-01-26T22:46:07.453-03:00  WARN 16378 --- [itau-backend] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionController': Lookup method resolution failed
+2026-01-26T22:46:07.455-03:00 ERROR 16378 --- [itau-backend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionController': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:481) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:351) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1321) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1218) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1184) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1121) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:993) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:620) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.1.jar:4.0.1]
+	at com.example.itau_backend.ItauBackendApplication.main(ItauBackendApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.1.jar:4.0.1]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.example.itau_backend.api.controller.TransactionController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@7d7117f7]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-7.0.2.jar:7.0.2]
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320) ~[spring-core-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:459) ~[spring-beans-7.0.2.jar:7.0.2]
+	... 24 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: TransactionRequest
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3010) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2329) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-7.0.2.jar:7.0.2]
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: TransactionRequest
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:547) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:123) ~[spring-boot-devtools-4.0.1.jar:4.0.1]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	... 30 common frames omitted
+
+2026-01-26T22:46:17.936-03:00  WARN 16378 --- [itau-backend] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionController': Lookup method resolution failed
+2026-01-26T22:46:17.938-03:00 ERROR 16378 --- [itau-backend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionController': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:481) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:351) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1321) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1218) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1184) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1121) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:993) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:620) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.1.jar:4.0.1]
+	at com.example.itau_backend.ItauBackendApplication.main(ItauBackendApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.1.jar:4.0.1]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.example.itau_backend.api.controller.TransactionController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@69aea65b]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-7.0.2.jar:7.0.2]
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320) ~[spring-core-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:459) ~[spring-beans-7.0.2.jar:7.0.2]
+	... 24 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: TransactionRequest
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3010) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2329) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-7.0.2.jar:7.0.2]
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: TransactionRequest
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:547) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:123) ~[spring-boot-devtools-4.0.1.jar:4.0.1]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	... 30 common frames omitted
+
+2026-01-26T22:46:25.425-03:00  WARN 16378 --- [itau-backend] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionController': Lookup method resolution failed
+2026-01-26T22:46:25.427-03:00 ERROR 16378 --- [itau-backend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionController': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:481) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:351) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1321) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1218) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1184) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1121) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:993) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:620) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.1.jar:4.0.1]
+	at com.example.itau_backend.ItauBackendApplication.main(ItauBackendApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.1.jar:4.0.1]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.example.itau_backend.api.controller.TransactionController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@2a0b17c5]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-7.0.2.jar:7.0.2]
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320) ~[spring-core-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:459) ~[spring-beans-7.0.2.jar:7.0.2]
+	... 24 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: TransactionRequest
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3010) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2329) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-7.0.2.jar:7.0.2]
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: TransactionRequest
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:547) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:123) ~[spring-boot-devtools-4.0.1.jar:4.0.1]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	... 30 common frames omitted
+
+2026-01-26T23:06:45.356-03:00  WARN 16378 --- [itau-backend] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.example.itau_backend.ItauBackendApplication]
+2026-01-26T23:06:45.359-03:00 ERROR 16378 --- [itau-backend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.example.itau_backend.ItauBackendApplication]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:196) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:446) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:310) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:794) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:602) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.1.jar:4.0.1]
+	at com.example.itau_backend.ItauBackendApplication.main(ItauBackendApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.1.jar:4.0.1]
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'statisticsController' for bean class [com.example.itau_backend.statistics.controller.StatisticsController] conflicts with existing, non-compatible bean definition of same name and class [com.example.itau_backend.api.controller.StatisticsController]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:360) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:287) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:347) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:283) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:206) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:174) ~[spring-context-7.0.2.jar:7.0.2]
+	... 16 common frames omitted
+
+2026-01-26T23:07:21.827-03:00  WARN 16378 --- [itau-backend] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.example.itau_backend.ItauBackendApplication]
+2026-01-26T23:07:21.828-03:00 ERROR 16378 --- [itau-backend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.example.itau_backend.ItauBackendApplication]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:196) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:446) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:310) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:794) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:602) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.1.jar:4.0.1]
+	at com.example.itau_backend.ItauBackendApplication.main(ItauBackendApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.1.jar:4.0.1]
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'statisticsController' for bean class [com.example.itau_backend.statistics.controller.StatisticsController] conflicts with existing, non-compatible bean definition of same name and class [com.example.itau_backend.api.controller.StatisticsController]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:360) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:287) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:347) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:283) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:206) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:174) ~[spring-context-7.0.2.jar:7.0.2]
+	... 16 common frames omitted
+
+2026-01-26T23:08:27.335-03:00  WARN 16378 --- [itau-backend] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.example.itau_backend.ItauBackendApplication]
+2026-01-26T23:08:27.336-03:00 ERROR 16378 --- [itau-backend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.example.itau_backend.ItauBackendApplication]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:196) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:446) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:310) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:794) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:602) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.1.jar:4.0.1]
+	at com.example.itau_backend.ItauBackendApplication.main(ItauBackendApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.1.jar:4.0.1]
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'statisticsController' for bean class [com.example.itau_backend.statistics.controller.StatisticsController] conflicts with existing, non-compatible bean definition of same name and class [com.example.itau_backend.api.controller.StatisticsController]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:360) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:287) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:347) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:283) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:206) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:174) ~[spring-context-7.0.2.jar:7.0.2]
+	... 16 common frames omitted
+
+2026-01-26T23:08:37.869-03:00  WARN 16378 --- [itau-backend] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionController': Lookup method resolution failed
+2026-01-26T23:08:37.872-03:00 ERROR 16378 --- [itau-backend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionController': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:481) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:351) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1321) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1218) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1184) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1121) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:993) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:620) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.1.jar:4.0.1]
+	at com.example.itau_backend.ItauBackendApplication.main(ItauBackendApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.1.jar:4.0.1]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.example.itau_backend.api.controller.TransactionController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@6ff6d274]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-7.0.2.jar:7.0.2]
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320) ~[spring-core-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:459) ~[spring-beans-7.0.2.jar:7.0.2]
+	... 24 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: TransactionRequest
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3010) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2329) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-7.0.2.jar:7.0.2]
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: TransactionRequest
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:547) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:123) ~[spring-boot-devtools-4.0.1.jar:4.0.1]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	... 30 common frames omitted
+
+2026-01-26T23:08:51.370-03:00  WARN 16378 --- [itau-backend] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'transactionController' defined in file [/home/lucas/git-clones/java/itau-backend/target/classes/com/example/itau_backend/api/controller/TransactionController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'transactionService': Lookup method resolution failed
+2026-01-26T23:08:51.372-03:00 ERROR 16378 --- [itau-backend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'transactionController' defined in file [/home/lucas/git-clones/java/itau-backend/target/classes/com/example/itau_backend/api/controller/TransactionController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'transactionService': Lookup method resolution failed
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1382) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1221) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1218) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1184) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1121) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:993) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:620) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.1.jar:4.0.1]
+	at com.example.itau_backend.ItauBackendApplication.main(ItauBackendApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.1.jar:4.0.1]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionService': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:481) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:351) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1321) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveBean(DefaultListableBeanFactory.java:1225) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1704) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-7.0.2.jar:7.0.2]
+	... 24 common frames omitted
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.example.itau_backend.api.service.TransactionService] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@270142c7]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-7.0.2.jar:7.0.2]
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320) ~[spring-core-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:459) ~[spring-beans-7.0.2.jar:7.0.2]
+	... 38 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: TransactionStatisticsResponse
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3010) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2329) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-7.0.2.jar:7.0.2]
+	... 40 common frames omitted
+Caused by: java.lang.ClassNotFoundException: TransactionStatisticsResponse
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:547) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:123) ~[spring-boot-devtools-4.0.1.jar:4.0.1]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	... 44 common frames omitted
+
+2026-01-26T23:17:27.106-03:00  WARN 16378 --- [itau-backend] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'restConfig' defined in file [/home/lucas/git-clones/java/itau-backend/target/classes/com/example/itau_backend/common/config/RestConfig.class]: Failed to instantiate [com.example.itau_backend.common.config.RestConfig$$SpringCGLIB$$0]: Constructor threw exception
+2026-01-26T23:17:27.108-03:00 ERROR 16378 --- [itau-backend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'restConfig' defined in file [/home/lucas/git-clones/java/itau-backend/target/classes/com/example/itau_backend/common/config/RestConfig.class]: Failed to instantiate [com.example.itau_backend.common.config.RestConfig$$SpringCGLIB$$0]: Constructor threw exception
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1344) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1231) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1218) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1184) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1121) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:993) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:620) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.1.jar:4.0.1]
+	at com.example.itau_backend.ItauBackendApplication.main(ItauBackendApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.1.jar:4.0.1]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.example.itau_backend.common.config.RestConfig$$SpringCGLIB$$0]: Constructor threw exception
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:224) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:106) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1338) ~[spring-beans-7.0.2.jar:7.0.2]
+	... 22 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	The import com.example.itau_backend.health.interceptor.RequestInterceptor cannot be resolved
+	RequestInterceptor cannot be resolved to a type
+	RequestInterceptor cannot be resolved to a type
+
+	at com.example.itau_backend.common.config.RestConfig.<init>(RestConfig.java:8) ~[classes/:na]
+	at com.example.itau_backend.common.config.RestConfig$$SpringCGLIB$$0.<init>(<generated>) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483) ~[na:na]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:198) ~[spring-beans-7.0.2.jar:7.0.2]
+	... 24 common frames omitted
+
+2026-01-26T23:19:09.254-03:00  WARN 16378 --- [itau-backend] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'loggerInterceptor' defined in file [/home/lucas/git-clones/java/itau-backend/target/classes/com/example/itau_backend/common/logger/LoggerInterceptor.class]: Failed to instantiate [com.example.itau_backend.common.logger.LoggerInterceptor]: Constructor threw exception
+2026-01-26T23:19:09.256-03:00 ERROR 16378 --- [itau-backend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'loggerInterceptor' defined in file [/home/lucas/git-clones/java/itau-backend/target/classes/com/example/itau_backend/common/logger/LoggerInterceptor.class]: Failed to instantiate [com.example.itau_backend.common.logger.LoggerInterceptor]: Constructor threw exception
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1344) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1231) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1218) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1184) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1121) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:993) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:620) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.1.jar:4.0.1]
+	at com.example.itau_backend.ItauBackendApplication.main(ItauBackendApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.1.jar:4.0.1]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.example.itau_backend.common.logger.LoggerInterceptor]: Constructor threw exception
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:224) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:106) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1338) ~[spring-beans-7.0.2.jar:7.0.2]
+	... 22 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problem: 
+	HandlerInterceptor cannot be resolved to a type
+
+	at com.example.itau_backend.common.logger.LoggerInterceptor.<init>(LoggerInterceptor.java:6) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483) ~[na:na]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:198) ~[spring-beans-7.0.2.jar:7.0.2]
+	... 24 common frames omitted
+
+2026-01-26T23:29:27.143-03:00  INFO 20595 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : Starting ItauBackendApplication using Java 25.0.2 with PID 20595 (/home/lucas/git-clones/java/itau-backend/target/classes started by lucas in /home/lucas/git-clones/java/itau-backend)
+2026-01-26T23:29:27.144-03:00  INFO 20595 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-01-26T23:29:27.169-03:00  INFO 20595 --- [itau-backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-26T23:29:27.169-03:00  INFO 20595 --- [itau-backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-26T23:29:27.586-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-01-26T23:29:27.595-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-26T23:29:27.595-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-01-26T23:29:27.611-03:00  INFO 20595 --- [itau-backend] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 441 ms
+2026-01-26T23:29:27.791-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-01-26T23:29:27.795-03:00  INFO 20595 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : Started ItauBackendApplication in 0.854 seconds (process running for 1.036)
+2026-01-26T23:29:36.323-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-26T23:29:36.323-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-26T23:29:36.324-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-01-26T23:30:44.260-03:00  INFO 20595 --- [itau-backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-01-26T23:30:44.263-03:00  INFO 20595 --- [itau-backend] [Thread-1] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-26T23:30:44.266-03:00  INFO 20595 --- [itau-backend] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-01-26T23:30:44.305-03:00  INFO 20595 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : Starting ItauBackendApplication using Java 25.0.2 with PID 20595 (/home/lucas/git-clones/java/itau-backend/target/classes started by lucas in /home/lucas/git-clones/java/itau-backend)
+2026-01-26T23:30:44.305-03:00  INFO 20595 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-01-26T23:30:44.385-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-01-26T23:30:44.385-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-26T23:30:44.385-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-01-26T23:30:44.389-03:00  INFO 20595 --- [itau-backend] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 83 ms
+2026-01-26T23:30:44.430-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-01-26T23:30:44.432-03:00  INFO 20595 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : Started ItauBackendApplication in 0.14 seconds (process running for 77.674)
+2026-01-26T23:30:44.433-03:00  INFO 20595 --- [itau-backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-01-26T23:30:48.933-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-26T23:30:48.934-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-26T23:30:48.934-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-01-26T23:30:48.935-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-1] c.e.i.common.logger.LoggerInterceptor    : HTTP POST /transacao - Status: 200
+2026-01-26T23:31:18.870-03:00  INFO 20595 --- [itau-backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-01-26T23:31:18.871-03:00  INFO 20595 --- [itau-backend] [Thread-5] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-26T23:31:18.872-03:00  INFO 20595 --- [itau-backend] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-01-26T23:31:18.909-03:00  INFO 20595 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : Starting ItauBackendApplication using Java 25.0.2 with PID 20595 (/home/lucas/git-clones/java/itau-backend/target/classes started by lucas in /home/lucas/git-clones/java/itau-backend)
+2026-01-26T23:31:18.909-03:00  INFO 20595 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-01-26T23:31:18.976-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-01-26T23:31:18.976-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-26T23:31:18.977-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-01-26T23:31:18.980-03:00  INFO 20595 --- [itau-backend] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 69 ms
+2026-01-26T23:31:19.016-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-01-26T23:31:19.017-03:00  INFO 20595 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : Started ItauBackendApplication in 0.119 seconds (process running for 112.259)
+2026-01-26T23:31:19.017-03:00  INFO 20595 --- [itau-backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-01-26T23:31:22.426-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-26T23:31:22.426-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-26T23:31:22.427-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-01-26T23:31:22.427-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-1] c.e.i.common.logger.LoggerInterceptor    : HTTP POST/transacao - Status: 200
+2026-01-26T23:31:23.170-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-2] c.e.i.common.logger.LoggerInterceptor    : HTTP POST/transacao - Status: 200
+2026-01-26T23:31:23.375-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-3] c.e.i.common.logger.LoggerInterceptor    : HTTP POST/transacao - Status: 200
+2026-01-26T23:31:23.543-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-5] c.e.i.common.logger.LoggerInterceptor    : HTTP POST/transacao - Status: 200
+2026-01-26T23:31:23.721-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-4] c.e.i.common.logger.LoggerInterceptor    : HTTP POST/transacao - Status: 200
+2026-01-26T23:31:23.881-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-6] c.e.i.common.logger.LoggerInterceptor    : HTTP POST/transacao - Status: 200
+2026-01-26T23:31:24.071-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-7] c.e.i.common.logger.LoggerInterceptor    : HTTP POST/transacao - Status: 200
+2026-01-26T23:31:24.274-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-9] c.e.i.common.logger.LoggerInterceptor    : HTTP POST/transacao - Status: 200
+2026-01-26T23:31:24.432-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-8] c.e.i.common.logger.LoggerInterceptor    : HTTP POST/transacao - Status: 200
+2026-01-26T23:31:24.584-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-10] c.e.i.common.logger.LoggerInterceptor    : HTTP POST/transacao - Status: 200
+2026-01-26T23:31:24.937-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-1] c.e.i.common.logger.LoggerInterceptor    : HTTP POST/transacao - Status: 200
+2026-01-26T23:31:25.128-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-2] c.e.i.common.logger.LoggerInterceptor    : HTTP POST/transacao - Status: 200
+2026-01-26T23:31:25.303-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-3] c.e.i.common.logger.LoggerInterceptor    : HTTP POST/transacao - Status: 200
+2026-01-26T23:31:25.489-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-5] c.e.i.common.logger.LoggerInterceptor    : HTTP POST/transacao - Status: 200
+2026-01-26T23:31:36.708-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-6] c.e.i.common.logger.LoggerInterceptor    : HTTP GET/estatistica - Status: 200
+2026-01-26T23:31:40.913-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-7] c.e.i.common.logger.LoggerInterceptor    : HTTP GET/estatistica - Status: 200
+2026-01-26T23:31:42.121-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-9] c.e.i.common.logger.LoggerInterceptor    : HTTP GET/estatistica - Status: 200
+2026-01-26T23:31:49.630-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-10] c.e.i.common.logger.LoggerInterceptor    : HTTP GET/health - Status: 200
+2026-01-26T23:31:58.046-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-2] c.e.i.common.logger.LoggerInterceptor    : HTTP POST/transacao - Status: 200
+2026-01-26T23:31:58.049-03:00  WARN 20595 --- [itau-backend] [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<java.lang.Void> com.example.itau_backend.api.controller.TransactionController.saveTransaction(com.example.itau_backend.api.dto.TransactionRequest)]
+2026-01-26T23:32:07.874-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-3] c.e.i.common.logger.LoggerInterceptor    : HTTP POST/transacao - Status: 200
+2026-01-26T23:32:07.875-03:00  WARN 20595 --- [itau-backend] [http-nio-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<java.lang.Void> com.example.itau_backend.api.controller.TransactionController.saveTransaction(com.example.itau_backend.api.dto.TransactionRequest)]
+2026-01-26T23:32:08.395-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-5] c.e.i.common.logger.LoggerInterceptor    : HTTP POST/transacao - Status: 200
+2026-01-26T23:32:08.396-03:00  WARN 20595 --- [itau-backend] [http-nio-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<java.lang.Void> com.example.itau_backend.api.controller.TransactionController.saveTransaction(com.example.itau_backend.api.dto.TransactionRequest)]
+2026-01-26T23:32:08.617-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-4] c.e.i.common.logger.LoggerInterceptor    : HTTP POST/transacao - Status: 200
+2026-01-26T23:32:08.618-03:00  WARN 20595 --- [itau-backend] [http-nio-8080-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<java.lang.Void> com.example.itau_backend.api.controller.TransactionController.saveTransaction(com.example.itau_backend.api.dto.TransactionRequest)]
+2026-01-26T23:32:15.236-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-6] c.e.i.common.logger.LoggerInterceptor    : HTTP POST/transacao - Status: 200
+2026-01-26T23:32:15.237-03:00  WARN 20595 --- [itau-backend] [http-nio-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<java.lang.Void> com.example.itau_backend.api.controller.TransactionController.saveTransaction(com.example.itau_backend.api.dto.TransactionRequest)]
+2026-01-26T23:34:14.608-03:00  INFO 20595 --- [itau-backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2026-01-26T23:34:14.609-03:00  INFO 20595 --- [itau-backend] [Thread-9] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-26T23:34:14.610-03:00  INFO 20595 --- [itau-backend] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-01-26T23:34:14.646-03:00  INFO 20595 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : Starting ItauBackendApplication using Java 25.0.2 with PID 20595 (/home/lucas/git-clones/java/itau-backend/target/classes started by lucas in /home/lucas/git-clones/java/itau-backend)
+2026-01-26T23:34:14.646-03:00  INFO 20595 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-01-26T23:34:14.710-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-01-26T23:34:14.710-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-26T23:34:14.710-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-01-26T23:34:14.713-03:00  INFO 20595 --- [itau-backend] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 66 ms
+2026-01-26T23:34:14.726-03:00  WARN 20595 --- [itau-backend] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'welcomePageHandlerMapping' defined in class path resource [org/springframework/boot/webmvc/autoconfigure/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Failed to instantiate [org.springframework.boot.webmvc.autoconfigure.WelcomePageHandlerMapping]: Factory method 'welcomePageHandlerMapping' threw exception with message: Unresolved compilation problem: 
+	The method addInterceptor(HandlerInterceptor) in the type InterceptorRegistry is not applicable for the arguments (LoggerInterceptor)
+
+2026-01-26T23:34:14.727-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-01-26T23:34:14.728-03:00  INFO 20595 --- [itau-backend] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-01-26T23:34:14.734-03:00 ERROR 20595 --- [itau-backend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'welcomePageHandlerMapping' defined in class path resource [org/springframework/boot/webmvc/autoconfigure/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Failed to instantiate [org.springframework.boot.webmvc.autoconfigure.WelcomePageHandlerMapping]: Factory method 'welcomePageHandlerMapping' threw exception with message: Unresolved compilation problem: 
+	The method addInterceptor(HandlerInterceptor) in the type InterceptorRegistry is not applicable for the arguments (LoggerInterceptor)
+
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1362) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1194) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1218) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1184) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1121) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:993) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:620) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.1.jar:4.0.1]
+	at com.example.itau_backend.ItauBackendApplication.main(ItauBackendApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.1.jar:4.0.1]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.webmvc.autoconfigure.WelcomePageHandlerMapping]: Factory method 'welcomePageHandlerMapping' threw exception with message: Unresolved compilation problem: 
+	The method addInterceptor(HandlerInterceptor) in the type InterceptorRegistry is not applicable for the arguments (LoggerInterceptor)
+
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:183) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:72) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:152) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-7.0.2.jar:7.0.2]
+	... 24 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problem: 
+	The method addInterceptor(HandlerInterceptor) in the type InterceptorRegistry is not applicable for the arguments (LoggerInterceptor)
+
+	at com.example.itau_backend.common.config.RestConfig.addInterceptors(RestConfig.java:22) ~[classes/:na]
+	at org.springframework.web.servlet.config.annotation.WebMvcConfigurerComposite.addInterceptors(WebMvcConfigurerComposite.java:98) ~[spring-webmvc-7.0.2.jar:7.0.2]
+	at org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration.addInterceptors(DelegatingWebMvcConfiguration.java:91) ~[spring-webmvc-7.0.2.jar:7.0.2]
+	at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.getInterceptors(WebMvcConfigurationSupport.java:308) ~[spring-webmvc-7.0.2.jar:7.0.2]
+	at org.springframework.boot.webmvc.autoconfigure.WebMvcAutoConfiguration$EnableWebMvcConfiguration.createWelcomePageHandlerMapping(WebMvcAutoConfiguration.java:498) ~[spring-boot-webmvc-4.0.1.jar:4.0.1]
+	at org.springframework.boot.webmvc.autoconfigure.WebMvcAutoConfiguration$EnableWebMvcConfiguration.welcomePageHandlerMapping(WebMvcAutoConfiguration.java:478) ~[spring-boot-webmvc-4.0.1.jar:4.0.1]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:155) ~[spring-beans-7.0.2.jar:7.0.2]
+	... 27 common frames omitted
+
+2026-01-26T23:34:25.160-03:00  INFO 20595 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : Starting ItauBackendApplication using Java 25.0.2 with PID 20595 (/home/lucas/git-clones/java/itau-backend/target/classes started by lucas in /home/lucas/git-clones/java/itau-backend)
+2026-01-26T23:34:25.160-03:00  INFO 20595 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-01-26T23:34:25.222-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-01-26T23:34:25.223-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-26T23:34:25.223-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-01-26T23:34:25.226-03:00  INFO 20595 --- [itau-backend] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 65 ms
+2026-01-26T23:34:25.238-03:00  WARN 20595 --- [itau-backend] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'welcomePageHandlerMapping' defined in class path resource [org/springframework/boot/webmvc/autoconfigure/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Failed to instantiate [org.springframework.boot.webmvc.autoconfigure.WelcomePageHandlerMapping]: Factory method 'welcomePageHandlerMapping' threw exception with message: Unresolved compilation problem: 
+	The method addInterceptor(HandlerInterceptor) in the type InterceptorRegistry is not applicable for the arguments (LoggerInterceptor)
+
+2026-01-26T23:34:25.238-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-01-26T23:34:25.239-03:00  INFO 20595 --- [itau-backend] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-01-26T23:34:25.240-03:00 ERROR 20595 --- [itau-backend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'welcomePageHandlerMapping' defined in class path resource [org/springframework/boot/webmvc/autoconfigure/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Failed to instantiate [org.springframework.boot.webmvc.autoconfigure.WelcomePageHandlerMapping]: Factory method 'welcomePageHandlerMapping' threw exception with message: Unresolved compilation problem: 
+	The method addInterceptor(HandlerInterceptor) in the type InterceptorRegistry is not applicable for the arguments (LoggerInterceptor)
+
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1362) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1194) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1218) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1184) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1121) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:993) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:620) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.1.jar:4.0.1]
+	at com.example.itau_backend.ItauBackendApplication.main(ItauBackendApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.1.jar:4.0.1]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.webmvc.autoconfigure.WelcomePageHandlerMapping]: Factory method 'welcomePageHandlerMapping' threw exception with message: Unresolved compilation problem: 
+	The method addInterceptor(HandlerInterceptor) in the type InterceptorRegistry is not applicable for the arguments (LoggerInterceptor)
+
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:183) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:72) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:152) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-7.0.2.jar:7.0.2]
+	... 24 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problem: 
+	The method addInterceptor(HandlerInterceptor) in the type InterceptorRegistry is not applicable for the arguments (LoggerInterceptor)
+
+	at com.example.itau_backend.common.config.RestConfig.addInterceptors(RestConfig.java:22) ~[classes/:na]
+	at org.springframework.web.servlet.config.annotation.WebMvcConfigurerComposite.addInterceptors(WebMvcConfigurerComposite.java:98) ~[spring-webmvc-7.0.2.jar:7.0.2]
+	at org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration.addInterceptors(DelegatingWebMvcConfiguration.java:91) ~[spring-webmvc-7.0.2.jar:7.0.2]
+	at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.getInterceptors(WebMvcConfigurationSupport.java:308) ~[spring-webmvc-7.0.2.jar:7.0.2]
+	at org.springframework.boot.webmvc.autoconfigure.WebMvcAutoConfiguration$EnableWebMvcConfiguration.createWelcomePageHandlerMapping(WebMvcAutoConfiguration.java:498) ~[spring-boot-webmvc-4.0.1.jar:4.0.1]
+	at org.springframework.boot.webmvc.autoconfigure.WebMvcAutoConfiguration$EnableWebMvcConfiguration.welcomePageHandlerMapping(WebMvcAutoConfiguration.java:478) ~[spring-boot-webmvc-4.0.1.jar:4.0.1]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:155) ~[spring-beans-7.0.2.jar:7.0.2]
+	... 27 common frames omitted
+
+2026-01-26T23:34:40.672-03:00  INFO 20595 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : Starting ItauBackendApplication using Java 25.0.2 with PID 20595 (/home/lucas/git-clones/java/itau-backend/target/classes started by lucas in /home/lucas/git-clones/java/itau-backend)
+2026-01-26T23:34:40.672-03:00  INFO 20595 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-01-26T23:34:40.730-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-01-26T23:34:40.731-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-26T23:34:40.731-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-01-26T23:34:40.733-03:00  INFO 20595 --- [itau-backend] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 60 ms
+2026-01-26T23:34:40.747-03:00  WARN 20595 --- [itau-backend] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'welcomePageHandlerMapping' defined in class path resource [org/springframework/boot/webmvc/autoconfigure/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Failed to instantiate [org.springframework.boot.webmvc.autoconfigure.WelcomePageHandlerMapping]: Factory method 'welcomePageHandlerMapping' threw exception with message: Unresolved compilation problem: 
+	The method addInterceptor(HandlerInterceptor) in the type InterceptorRegistry is not applicable for the arguments (LoggerInterceptor)
+
+2026-01-26T23:34:40.748-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-01-26T23:34:40.749-03:00  INFO 20595 --- [itau-backend] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-01-26T23:34:40.749-03:00 ERROR 20595 --- [itau-backend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'welcomePageHandlerMapping' defined in class path resource [org/springframework/boot/webmvc/autoconfigure/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Failed to instantiate [org.springframework.boot.webmvc.autoconfigure.WelcomePageHandlerMapping]: Factory method 'welcomePageHandlerMapping' threw exception with message: Unresolved compilation problem: 
+	The method addInterceptor(HandlerInterceptor) in the type InterceptorRegistry is not applicable for the arguments (LoggerInterceptor)
+
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1362) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1194) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1218) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1184) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1121) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:993) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:620) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.1.jar:4.0.1]
+	at com.example.itau_backend.ItauBackendApplication.main(ItauBackendApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.1.jar:4.0.1]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.webmvc.autoconfigure.WelcomePageHandlerMapping]: Factory method 'welcomePageHandlerMapping' threw exception with message: Unresolved compilation problem: 
+	The method addInterceptor(HandlerInterceptor) in the type InterceptorRegistry is not applicable for the arguments (LoggerInterceptor)
+
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:183) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:72) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:152) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-7.0.2.jar:7.0.2]
+	... 24 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problem: 
+	The method addInterceptor(HandlerInterceptor) in the type InterceptorRegistry is not applicable for the arguments (LoggerInterceptor)
+
+	at com.example.itau_backend.common.config.RestConfig.addInterceptors(RestConfig.java:22) ~[classes/:na]
+	at org.springframework.web.servlet.config.annotation.WebMvcConfigurerComposite.addInterceptors(WebMvcConfigurerComposite.java:98) ~[spring-webmvc-7.0.2.jar:7.0.2]
+	at org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration.addInterceptors(DelegatingWebMvcConfiguration.java:91) ~[spring-webmvc-7.0.2.jar:7.0.2]
+	at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.getInterceptors(WebMvcConfigurationSupport.java:308) ~[spring-webmvc-7.0.2.jar:7.0.2]
+	at org.springframework.boot.webmvc.autoconfigure.WebMvcAutoConfiguration$EnableWebMvcConfiguration.createWelcomePageHandlerMapping(WebMvcAutoConfiguration.java:498) ~[spring-boot-webmvc-4.0.1.jar:4.0.1]
+	at org.springframework.boot.webmvc.autoconfigure.WebMvcAutoConfiguration$EnableWebMvcConfiguration.welcomePageHandlerMapping(WebMvcAutoConfiguration.java:478) ~[spring-boot-webmvc-4.0.1.jar:4.0.1]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:155) ~[spring-beans-7.0.2.jar:7.0.2]
+	... 27 common frames omitted
+
+2026-01-26T23:34:57.180-03:00  INFO 20595 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : Starting ItauBackendApplication using Java 25.0.2 with PID 20595 (/home/lucas/git-clones/java/itau-backend/target/classes started by lucas in /home/lucas/git-clones/java/itau-backend)
+2026-01-26T23:34:57.180-03:00  INFO 20595 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-01-26T23:34:57.240-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-01-26T23:34:57.241-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-26T23:34:57.241-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-01-26T23:34:57.243-03:00  INFO 20595 --- [itau-backend] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 63 ms
+2026-01-26T23:34:57.248-03:00  WARN 20595 --- [itau-backend] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'restConfig' defined in file [/home/lucas/git-clones/java/itau-backend/target/classes/com/example/itau_backend/common/config/RestConfig.class]: Failed to instantiate [com.example.itau_backend.common.config.RestConfig$$SpringCGLIB$$0]: Constructor threw exception
+2026-01-26T23:34:57.249-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-01-26T23:34:57.250-03:00  INFO 20595 --- [itau-backend] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-01-26T23:34:57.250-03:00 ERROR 20595 --- [itau-backend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'restConfig' defined in file [/home/lucas/git-clones/java/itau-backend/target/classes/com/example/itau_backend/common/config/RestConfig.class]: Failed to instantiate [com.example.itau_backend.common.config.RestConfig$$SpringCGLIB$$0]: Constructor threw exception
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1344) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1231) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1218) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1184) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1121) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:993) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:620) ~[spring-context-7.0.2.jar:7.0.2]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.1.jar:4.0.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.1.jar:4.0.1]
+	at com.example.itau_backend.ItauBackendApplication.main(ItauBackendApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.1.jar:4.0.1]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.example.itau_backend.common.config.RestConfig$$SpringCGLIB$$0]: Constructor threw exception
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:224) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:106) ~[spring-beans-7.0.2.jar:7.0.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1338) ~[spring-beans-7.0.2.jar:7.0.2]
+	... 22 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	The import com.example.itau_backend.common.logger.LoggerInterceptor cannot be resolved
+	LoggerInterceptor cannot be resolved to a type
+	LoggerInterceptor cannot be resolved to a type
+
+	at com.example.itau_backend.common.config.RestConfig.<init>(RestConfig.java:8) ~[classes/:na]
+	at com.example.itau_backend.common.config.RestConfig$$SpringCGLIB$$0.<init>(<generated>) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483) ~[na:na]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:198) ~[spring-beans-7.0.2.jar:7.0.2]
+	... 24 common frames omitted
+
+2026-01-26T23:35:14.678-03:00  INFO 20595 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : Starting ItauBackendApplication using Java 25.0.2 with PID 20595 (/home/lucas/git-clones/java/itau-backend/target/classes started by lucas in /home/lucas/git-clones/java/itau-backend)
+2026-01-26T23:35:14.679-03:00  INFO 20595 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-01-26T23:35:14.748-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-01-26T23:35:14.749-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-26T23:35:14.749-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-01-26T23:35:14.751-03:00  INFO 20595 --- [itau-backend] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 72 ms
+2026-01-26T23:35:14.795-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-01-26T23:35:14.796-03:00  INFO 20595 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : Started ItauBackendApplication in 0.126 seconds (process running for 348.038)
+2026-01-26T23:35:14.797-03:00  INFO 20595 --- [itau-backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-01-26T23:35:21.199-03:00  INFO 20595 --- [itau-backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-01-26T23:35:21.199-03:00  INFO 20595 --- [itau-backend] [Thread-13] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-26T23:35:21.200-03:00  INFO 20595 --- [itau-backend] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-01-26T23:35:21.237-03:00  INFO 20595 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : Starting ItauBackendApplication using Java 25.0.2 with PID 20595 (/home/lucas/git-clones/java/itau-backend/target/classes started by lucas in /home/lucas/git-clones/java/itau-backend)
+2026-01-26T23:35:21.237-03:00  INFO 20595 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-01-26T23:35:21.294-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-01-26T23:35:21.294-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-26T23:35:21.294-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-01-26T23:35:21.296-03:00  INFO 20595 --- [itau-backend] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 58 ms
+2026-01-26T23:35:21.330-03:00  INFO 20595 --- [itau-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-01-26T23:35:21.331-03:00  INFO 20595 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : Started ItauBackendApplication in 0.102 seconds (process running for 354.572)
+2026-01-26T23:35:21.331-03:00  INFO 20595 --- [itau-backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-01-26T23:35:29.805-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat-4].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-26T23:35:29.805-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-26T23:35:29.806-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-01-26T23:35:29.806-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-1] c.e.i.common.logger.LoggerRequestFilter  : HTTP POST/transacao - Status: 200
+2026-01-26T23:35:32.028-03:00  INFO 20595 --- [itau-backend] [http-nio-8080-exec-2] c.e.i.common.logger.LoggerRequestFilter  : HTTP POST/transacao - Status: 200
+2026-01-26T23:35:56.375-03:00  INFO 20595 --- [itau-backend] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-26T23:35:56.376-03:00  INFO 20595 --- [itau-backend] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-01-26T23:36:22.141-03:00  INFO 21151 --- [itau-backend] [main] c.e.i.a.c.TransactionControllerTest      : Starting TransactionControllerTest using Java 25.0.2 with PID 21151 (started by lucas in /home/lucas/git-clones/java/itau-backend)
+2026-01-26T23:36:22.142-03:00  INFO 21151 --- [itau-backend] [main] c.e.i.a.c.TransactionControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2026-01-26T23:36:22.747-03:00  INFO 21151 --- [itau-backend] [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-01-26T23:36:22.747-03:00  INFO 21151 --- [itau-backend] [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-01-26T23:36:22.749-03:00  INFO 21151 --- [itau-backend] [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-01-26T23:36:22.790-03:00  INFO 21151 --- [itau-backend] [main] c.e.i.a.c.TransactionControllerTest      : Started TransactionControllerTest in 0.824 seconds (process running for 1.478)
+2026-01-26T23:36:23.472-03:00  INFO 21151 --- [itau-backend] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.itau_backend.health.HealthControllerTest]: HealthControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-26T23:36:23.480-03:00  INFO 21151 --- [itau-backend] [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.itau_backend.ItauBackendApplication for test class com.example.itau_backend.health.HealthControllerTest
+2026-01-26T23:36:23.505-03:00  INFO 21151 --- [itau-backend] [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.itau_backend.statistics.controller.StatisticsControllerTest]: StatisticsControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-01-26T23:36:23.511-03:00  INFO 21151 --- [itau-backend] [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.itau_backend.ItauBackendApplication for test class com.example.itau_backend.statistics.controller.StatisticsControllerTest
+2026-01-26T23:36:29.733-03:00  INFO 21387 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : Starting ItauBackendApplication using Java 25.0.2 with PID 21387 (/home/lucas/git-clones/java/itau-backend/target/classes started by lucas in /home/lucas/git-clones/java/itau-backend)
+2026-01-26T23:36:29.735-03:00  INFO 21387 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-01-26T23:36:29.760-03:00  INFO 21387 --- [itau-backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-26T23:36:29.760-03:00  INFO 21387 --- [itau-backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-26T23:36:30.177-03:00  INFO 21387 --- [itau-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-01-26T23:36:30.184-03:00  INFO 21387 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-26T23:36:30.184-03:00  INFO 21387 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-01-26T23:36:30.198-03:00  INFO 21387 --- [itau-backend] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 437 ms
+2026-01-26T23:36:30.383-03:00  INFO 21387 --- [itau-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-01-26T23:36:30.387-03:00  INFO 21387 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : Started ItauBackendApplication in 0.867 seconds (process running for 1.061)
+2026-01-26T23:36:41.076-03:00  INFO 21387 --- [itau-backend] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-26T23:36:41.076-03:00  INFO 21387 --- [itau-backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-26T23:36:41.077-03:00  INFO 21387 --- [itau-backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-01-26T23:36:41.079-03:00  INFO 21387 --- [itau-backend] [http-nio-8080-exec-1] c.e.i.common.logger.LoggerRequestFilter  : HTTP POST/transacao - Status: 200
+2026-01-26T23:36:52.561-03:00  INFO 21387 --- [itau-backend] [http-nio-8080-exec-3] c.e.i.common.logger.LoggerRequestFilter  : HTTP GET/debug/get-all - Status: 200
+2026-01-26T23:36:54.677-03:00  INFO 21387 --- [itau-backend] [http-nio-8080-exec-4] c.e.i.common.logger.LoggerRequestFilter  : HTTP GET/debug/get-all - Status: 200
+2026-01-26T23:36:59.344-03:00  INFO 21387 --- [itau-backend] [http-nio-8080-exec-5] c.e.i.common.logger.LoggerRequestFilter  : HTTP GET/health - Status: 200
+2026-01-26T23:37:00.661-03:00  INFO 21387 --- [itau-backend] [http-nio-8080-exec-6] c.e.i.common.logger.LoggerRequestFilter  : HTTP GET/health - Status: 200
+2026-01-26T23:37:01.584-03:00  INFO 21387 --- [itau-backend] [http-nio-8080-exec-7] c.e.i.common.logger.LoggerRequestFilter  : HTTP GET/health - Status: 200
+2026-01-26T23:37:02.453-03:00  INFO 21387 --- [itau-backend] [http-nio-8080-exec-8] c.e.i.common.logger.LoggerRequestFilter  : HTTP GET/health - Status: 200
+2026-01-26T23:37:03.774-03:00  INFO 21387 --- [itau-backend] [http-nio-8080-exec-9] c.e.i.common.logger.LoggerRequestFilter  : HTTP GET/health - Status: 200
+2026-01-26T23:37:43.865-03:00  INFO 21387 --- [itau-backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2026-01-26T23:37:43.868-03:00  INFO 21387 --- [itau-backend] [Thread-1] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-26T23:37:43.870-03:00  INFO 21387 --- [itau-backend] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-01-26T23:37:43.909-03:00  INFO 21387 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : Starting ItauBackendApplication using Java 25.0.2 with PID 21387 (/home/lucas/git-clones/java/itau-backend/target/classes started by lucas in /home/lucas/git-clones/java/itau-backend)
+2026-01-26T23:37:43.909-03:00  INFO 21387 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-01-26T23:37:43.988-03:00  INFO 21387 --- [itau-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-01-26T23:37:43.989-03:00  INFO 21387 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-26T23:37:43.989-03:00  INFO 21387 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-01-26T23:37:43.992-03:00  INFO 21387 --- [itau-backend] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 81 ms
+2026-01-26T23:37:44.034-03:00  INFO 21387 --- [itau-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-01-26T23:37:44.035-03:00  INFO 21387 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : Started ItauBackendApplication in 0.139 seconds (process running for 74.71)
+2026-01-26T23:37:44.036-03:00  INFO 21387 --- [itau-backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-01-26T23:37:50.099-03:00  INFO 21387 --- [itau-backend] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-26T23:37:50.099-03:00  INFO 21387 --- [itau-backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-26T23:37:50.100-03:00  INFO 21387 --- [itau-backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-01-26T23:37:55.502-03:00  WARN 21387 --- [itau-backend] [http-nio-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<java.lang.Void> com.example.itau_backend.api.controller.TransactionController.saveTransaction(com.example.itau_backend.api.dto.TransactionRequest)]
+2026-01-26T23:37:58.748-03:00  WARN 21387 --- [itau-backend] [http-nio-8080-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<java.lang.Void> com.example.itau_backend.api.controller.TransactionController.saveTransaction(com.example.itau_backend.api.dto.TransactionRequest)]
+2026-01-26T23:38:38.492-03:00  INFO 21387 --- [itau-backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2026-01-26T23:38:38.493-03:00  INFO 21387 --- [itau-backend] [Thread-5] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-26T23:38:38.494-03:00  INFO 21387 --- [itau-backend] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-01-26T23:38:38.533-03:00  INFO 21387 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : Starting ItauBackendApplication using Java 25.0.2 with PID 21387 (/home/lucas/git-clones/java/itau-backend/target/classes started by lucas in /home/lucas/git-clones/java/itau-backend)
+2026-01-26T23:38:38.534-03:00  INFO 21387 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-01-26T23:38:38.602-03:00  INFO 21387 --- [itau-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-01-26T23:38:38.603-03:00  INFO 21387 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-26T23:38:38.603-03:00  INFO 21387 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-01-26T23:38:38.606-03:00  INFO 21387 --- [itau-backend] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 71 ms
+2026-01-26T23:38:38.644-03:00  INFO 21387 --- [itau-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-01-26T23:38:38.645-03:00  INFO 21387 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : Started ItauBackendApplication in 0.122 seconds (process running for 129.32)
+2026-01-26T23:38:38.645-03:00  INFO 21387 --- [itau-backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-01-26T23:48:18.721-03:00  INFO 21387 --- [itau-backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-01-26T23:48:18.722-03:00  INFO 21387 --- [itau-backend] [Thread-9] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-26T23:48:18.722-03:00  INFO 21387 --- [itau-backend] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-01-26T23:48:18.762-03:00  INFO 21387 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : Starting ItauBackendApplication using Java 25.0.2 with PID 21387 (/home/lucas/git-clones/java/itau-backend/target/classes started by lucas in /home/lucas/git-clones/java/itau-backend)
+2026-01-26T23:48:18.762-03:00  INFO 21387 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-01-26T23:48:18.836-03:00  INFO 21387 --- [itau-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-01-26T23:48:18.837-03:00  INFO 21387 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-26T23:48:18.838-03:00  INFO 21387 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-01-26T23:48:18.840-03:00  INFO 21387 --- [itau-backend] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 77 ms
+2026-01-26T23:48:18.886-03:00  INFO 21387 --- [itau-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-01-26T23:48:18.887-03:00  INFO 21387 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : Started ItauBackendApplication in 0.138 seconds (process running for 709.562)
+2026-01-26T23:48:18.887-03:00  INFO 21387 --- [itau-backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-01-26T23:49:11.342-03:00  INFO 21387 --- [itau-backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-01-26T23:49:11.343-03:00  INFO 21387 --- [itau-backend] [Thread-13] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-26T23:49:11.344-03:00  INFO 21387 --- [itau-backend] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-01-26T23:49:11.382-03:00  INFO 21387 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : Starting ItauBackendApplication using Java 25.0.2 with PID 21387 (/home/lucas/git-clones/java/itau-backend/target/classes started by lucas in /home/lucas/git-clones/java/itau-backend)
+2026-01-26T23:49:11.382-03:00  INFO 21387 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-01-26T23:49:11.444-03:00  INFO 21387 --- [itau-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-01-26T23:49:11.445-03:00  INFO 21387 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-26T23:49:11.445-03:00  INFO 21387 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-01-26T23:49:11.447-03:00  INFO 21387 --- [itau-backend] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 64 ms
+2026-01-26T23:49:11.481-03:00  INFO 21387 --- [itau-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-01-26T23:49:11.482-03:00  INFO 21387 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : Started ItauBackendApplication in 0.11 seconds (process running for 762.156)
+2026-01-26T23:49:11.482-03:00  INFO 21387 --- [itau-backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-01-26T23:50:37.977-03:00  INFO 21387 --- [itau-backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-01-26T23:50:37.978-03:00  INFO 21387 --- [itau-backend] [Thread-17] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-26T23:50:37.979-03:00  INFO 21387 --- [itau-backend] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-01-26T23:50:38.013-03:00  INFO 21387 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : Starting ItauBackendApplication using Java 25.0.2 with PID 21387 (/home/lucas/git-clones/java/itau-backend/target/classes started by lucas in /home/lucas/git-clones/java/itau-backend)
+2026-01-26T23:50:38.013-03:00  INFO 21387 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-01-26T23:50:38.073-03:00  INFO 21387 --- [itau-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-01-26T23:50:38.073-03:00  INFO 21387 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-26T23:50:38.074-03:00  INFO 21387 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-01-26T23:50:38.076-03:00  INFO 21387 --- [itau-backend] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 62 ms
+2026-01-26T23:50:38.110-03:00  INFO 21387 --- [itau-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-01-26T23:50:38.111-03:00  INFO 21387 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : Started ItauBackendApplication in 0.108 seconds (process running for 848.786)
+2026-01-26T23:50:38.112-03:00  INFO 21387 --- [itau-backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-01-26T23:51:00.530-03:00  INFO 21387 --- [itau-backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-01-26T23:51:00.531-03:00  INFO 21387 --- [itau-backend] [Thread-21] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-26T23:51:00.532-03:00  INFO 21387 --- [itau-backend] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-01-26T23:51:00.565-03:00  INFO 21387 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : Starting ItauBackendApplication using Java 25.0.2 with PID 21387 (/home/lucas/git-clones/java/itau-backend/target/classes started by lucas in /home/lucas/git-clones/java/itau-backend)
+2026-01-26T23:51:00.565-03:00  INFO 21387 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-01-26T23:51:00.622-03:00  INFO 21387 --- [itau-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-01-26T23:51:00.623-03:00  INFO 21387 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-26T23:51:00.623-03:00  INFO 21387 --- [itau-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-01-26T23:51:00.625-03:00  INFO 21387 --- [itau-backend] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 59 ms
+2026-01-26T23:51:00.657-03:00  INFO 21387 --- [itau-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-01-26T23:51:00.658-03:00  INFO 21387 --- [itau-backend] [restartedMain] c.e.itau_backend.ItauBackendApplication  : Started ItauBackendApplication in 0.103 seconds (process running for 871.332)
+2026-01-26T23:51:00.658-03:00  INFO 21387 --- [itau-backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-01-26T23:51:07.758-03:00  INFO 21387 --- [itau-backend] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-26T23:51:07.758-03:00  INFO 21387 --- [itau-backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-26T23:51:07.759-03:00  INFO 21387 --- [itau-backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-01-26T23:51:07.764-03:00  INFO 21387 --- [itau-backend] [http-nio-8080-exec-1] c.e.i.common.logger.LoggerRequestFilter  : Request: GET/health | Response: 200 | Duration: 5ms
+2026-01-26T23:51:17.685-03:00  INFO 21387 --- [itau-backend] [http-nio-8080-exec-3] c.e.i.common.logger.LoggerRequestFilter  : Request: POST/transacao | Response: 201 | Duration: 7ms
+2026-01-26T23:51:20.662-03:00  INFO 21387 --- [itau-backend] [http-nio-8080-exec-4] c.e.i.common.logger.LoggerRequestFilter  : Request: POST/transacao | Response: 201 | Duration: 1ms
+2026-01-26T23:51:21.285-03:00  INFO 21387 --- [itau-backend] [http-nio-8080-exec-5] c.e.i.common.logger.LoggerRequestFilter  : Request: POST/transacao | Response: 201 | Duration: 1ms
+2026-01-26T23:51:25.655-03:00  WARN 21387 --- [itau-backend] [http-nio-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<java.lang.Void> com.example.itau_backend.api.controller.TransactionController.saveTransaction(com.example.itau_backend.api.dto.TransactionRequest)]
+2026-01-26T23:51:25.655-03:00  INFO 21387 --- [itau-backend] [http-nio-8080-exec-6] c.e.i.common.logger.LoggerRequestFilter  : Request: POST/transacao | Response: 400 | Duration: 1ms
+2026-01-26T23:51:34.894-03:00  WARN 21387 --- [itau-backend] [http-nio-8080-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<java.lang.Void> com.example.itau_backend.api.controller.TransactionController.saveTransaction(com.example.itau_backend.api.dto.TransactionRequest)]
+2026-01-26T23:51:34.894-03:00  INFO 21387 --- [itau-backend] [http-nio-8080-exec-7] c.e.i.common.logger.LoggerRequestFilter  : Request: POST/transacao | Response: 400 | Duration: 1ms
+2026-01-26T23:51:40.303-03:00  WARN 21387 --- [itau-backend] [http-nio-8080-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<java.lang.Void> com.example.itau_backend.api.controller.TransactionController.saveTransaction(com.example.itau_backend.api.dto.TransactionRequest) with 2 errors: [Field error in object 'transactionRequest' on field 'valor': rejected value [null]; codes [NotNull.transactionRequest.valor,NotNull.valor,NotNull.java.math.BigDecimal,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [transactionRequest.valor,valor]; arguments []; default message [valor]]; default message [must not be null]] [Field error in object 'transactionRequest' on field 'dataHora': rejected value [null]; codes [NotNull.transactionRequest.dataHora,NotNull.dataHora,NotNull.java.time.OffsetDateTime,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [transactionRequest.dataHora,dataHora]; arguments []; default message [dataHora]]; default message [must not be null]] ]
+2026-01-26T23:51:40.303-03:00  INFO 21387 --- [itau-backend] [http-nio-8080-exec-8] c.e.i.common.logger.LoggerRequestFilter  : Request: POST/transacao | Response: 400 | Duration: 8ms
+2026-01-26T23:51:59.776-03:00  WARN 21387 --- [itau-backend] [http-nio-8080-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.example.itau_backend.api.exception.exceptions.IllegalTransactionException]
+2026-01-26T23:51:59.776-03:00  INFO 21387 --- [itau-backend] [http-nio-8080-exec-9] c.e.i.common.logger.LoggerRequestFilter  : Request: POST/transacao | Response: 422 | Duration: 2ms
+2026-01-26T23:52:13.807-03:00  INFO 21387 --- [itau-backend] [http-nio-8080-exec-1] c.e.i.common.logger.LoggerRequestFilter  : Request: GET/debug/get-all | Response: 404 | Duration: 2ms
+2026-01-26T23:53:45.497-03:00  INFO 21387 --- [itau-backend] [http-nio-8080-exec-3] c.e.i.common.logger.LoggerRequestFilter  : Request: GET/debug/get-all | Response: 404 | Duration: 2ms
+2026-01-26T23:56:39.468-03:00  INFO 21387 --- [itau-backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2026-01-26T23:56:39.469-03:00  INFO 21387 --- [itau-backend] [Thread-25] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-26T23:56:39.470-03:00  INFO 21387 --- [itau-backend] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
