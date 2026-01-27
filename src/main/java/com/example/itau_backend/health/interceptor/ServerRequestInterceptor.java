@@ -11,11 +11,11 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @Component
-public class RequestInterceptor implements HandlerInterceptor {
+public class ServerRequestInterceptor implements HandlerInterceptor {
 
   private final HealthService healthService;
 
-  RequestInterceptor(HealthService healthService) {
+  ServerRequestInterceptor(HealthService healthService) {
     this.healthService = healthService;
   }
 

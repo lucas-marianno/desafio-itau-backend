@@ -5,13 +5,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import com.example.itau_backend.health.interceptor.RequestInterceptor;
+import com.example.itau_backend.health.interceptor.ServerRequestInterceptor;
 
 @Configuration
 public class RestConfig implements WebMvcConfigurer {
 
   @Autowired
-  private RequestInterceptor requestInterceptor;
+  private ServerRequestInterceptor requestInterceptor;
 
   public void addInterceptors(InterceptorRegistry registry) {
     registry.addInterceptor(requestInterceptor);
