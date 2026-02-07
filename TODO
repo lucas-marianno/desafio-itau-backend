@@ -1,23 +1,2 @@
-docker
-logs
-healthcheck endpoint {
-  basics:{
-    status: UP or DOWN
-    uptime:
-    timestamp: the current servertime
-  }
-  system resources:{
-    memory:{
-      total available memory
-      used memory
-    }
-    thread count:
-  }
-  storage:{
-    n of records stored
-    last transaction timestamp
-  }
-}
 api documentation
 building and running documentation
-configuration already implemented an optional endpoint
