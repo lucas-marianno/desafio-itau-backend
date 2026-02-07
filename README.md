@@ -1,49 +1,63 @@
-# desafio-itau-backend
+# Desafio Itaú Backend
+Essa é a minha solução para o desafio de backend do banco itaú que contempla 100% dos requisitos obrigatórios **E** opcionais.
 
-# Itaú Unibanco - Desafio de Programação
+Como o desafio estava bem estruturado e com objetivos claros. Trabalhei usando a estratégia `TDD`: Para cada requisito do projeto, eu primeiramente criei os testes que refletissem o requisito, então eu implementava o requisito usando o teste como referência e objetivo. Eventualmente, quando enccontrava `edge-cases`, os adicionava aos testes, e por sua vez utilizava os testes para garantir a qualidade do código durante o processo de implementação de novas funcionalidades ou até mesmo refatorações.
 
-Este é um desafio bacana tanto de desenvolvimento de software quanto de engenharia de software. Queremos testar sua capacidade de construir um software com várias partes diferentes funcionando em conjunto!
+Como o desafio pedia que não fossem utilizados nenhum tipo de banco de dados e tudo fosse manualmente armazenado em memória. Decidi criar uma classe chamada `TransactionRepository` que armazena um objeto to tipo `Map<Long,Transaction>`, onde cada transação é armazenada em sequencia com um `Long` que atua como `private_key`. Implementei também as funções de `CRUD`, de modo que essa classe pudesse emular em memória as funcionalidades de um banco de dados relacional tipo `H2` ou `postgreSQL`.
 
-## 1. Introdução
+Por se tratar de uma representação de um sistema bancário, deduzi que a precisão dos valores de cada transação fosse de importância sumária! (assim como a veracidade e precisão das estatísticas). Deste modo, decidi armazenar todos os valores financeiros com o tipo `BigDecimal`, o que garante a exatidão dos valores sem se preocupar com erros do tipo `floating-point`.
 
-Sua missão, caso você aceite, é criar uma API REST que recebe Transações e retorna Estatísticas sob essas transações. Para este desafio, a API deve ser criada utilizando-se de Java ou [Kotlin](https://kotlinlang.org/) e Spring Boot.
+Devido a minha decisão de utilizar o tipo `BigDecimal`, eu fui obrigado a desenvolver `BigDecimalSummaryStatistics`. Que se comporta de maneira idêntica a `DoubleSummaryStatistics`, porém garantindo precisão e evitando erros `floating-point`.
 
-Um bom lugar para se começar é o [Spring Starter](https://start.spring.io/).
+Ainda pensando na precisão dos dados, fiz uso do método de arredondamento de casas decimais `HALF_EVEN`, diminuindo assim erros cumulativos de arredondamento.
 
->**Dica:** Não existe uma forma certa ou errada de resolver o desafio! Vamos avaliar coisas como a qualidade do seu código, o quão fácil é de compreender o código, organização do projeto, quantidade e qualidade dos testes, preocupação com segurança e vários outros fatores :)
+Um dos requisitos opcionais era que fosse criado um endpoint de saúde da aplicação. Decidi fazer uso da famosa stack `Prometheus + Grafana`, o que permitiu com facilidade observar as inúmeras métricas tanto da aplicação, quanto métricas do servidor em que a aplicação está rodando. Tudo isso atraves de uma endpoint com interface gráfica amigável e dash-boards.
 
-## 2. Definição do desafio
+Para reduzir a verbosidade do cógigo, utilizei a ferramenta `Lombok` para gerar código `boiler-plate`.
 
-Neste desafio você deve **criar uma API REST** no [GitHub](https://github.com/) ou [GitLab](https://gitlab.com/). **Leia com atenção todas as instruções a seguir!**
+Para facilitar o deploy da aplicação e garantir que funcionasse em qualquer contexto, fiz uso do `Docker` e `Docker Compose`.
 
-### 2.1. Restrições Técnicas
+## Tecnologias utilizadas:
+- Java 25
+- Maven
+- Spring Boot 4.0.1
+- Spring Boot WEB
+- Spring Boot Actuator
+- Micrometer-Prometheus
+- Grafana
+- Lombok
+- Docker
+- Docker Compose
 
-Seu projeto:
+## Como executar a aplicação
+Você precisará ter instalado `docker` e `docker-compose` em sua máquina.
 
-- **DEVE** estar no [GitHub](https://github.com/) ou [GitLab](https://gitlab.com/)
-- **NÃO DEVE** fazer _fork_ de nenhum outro projeto
-- **DEVE** ter pelo menos 1 commit por cada endpoint (mínimo de 3 commits)
-  - Queremos ver a evolução do seu projeto com o tempo ;)
-- Todos os commits **DEVEM** ser feitos pelo mesmo usuário que criou o projeto
-  - Entendemos que algumas pessoas tem usuários pessoais e profissionais, ou um usuário diferente usado para estudar. Atenção com isso se você for uma dessas pessoas!
-- **DEVE** seguir exatamente os _endpoints_ descritos a seguir
-  - Por exemplo, `/transacao` não é a mesma coisa que `/transacoes`
-- **DEVE** aceitar e responder com objetos exatamente como descritos a seguir
-  - Por exemplo, `dataHora` não é a mesma coisa que `data-hora` ou `dtTransacao`
-- **NÃO DEVE** utilizar quaisquer sistemas de banco de dados (como H2, MySQL, PostgreSQL, ...) ou cache (como Redis, Memcached, Infinispan, ...)
-- **DEVE** armazenar todos os dados **em memória**
-- **DEVE** aceitar e responder apenas com [JSON](https://www.json.org/json-pt.html)
+- Baixe esse repositório e execute na pasta raiz do projeto:
+  ```bash
+  docker-compose up
+  ```
 
->**Atenção!** Por motivos de segurança, não podemos aceitar projetos enviados como arquivos. Você **DEVE** disponibilizar seu projeto publicamente para que possamos acessá-lo e corrigi-lo! Após receber uma resposta de nós, sinta-se livre para tornar seu projeto **privado** :)
+## Como executar testes unitários e de integração
+Você precisará ter o `JDK 25` instalado em sua máquina. O Maven wrapper já está incluso no projeto.
+- Baixe esse repositório e execute na raiz do projeto:
+  ```bash
+  ./mvnw test
+  ```
 
-### 2.2. Endpoints da API
+Para executar e análisar os testes individualmente, abra o projeto na IDE ou editor de sua preferência e execute como de costume.
 
-A seguir serão especificados os endpoints que devem estar presentes na sua API e a funcionalidade esperada de cada um deles.
+## Documentação da API
+Primeramente, execute a aplicação e ela estará disponível em [http://localhost:8080/](http://localhost:8080/).
 
-#### 2.2.1. Receber Transações: `POST /transacao`
+### Endpoints base
+Assim como já mencionado, esse projeto contempla 100% dos requisitos do desafio, portanto todos os endpoints são funcionais e são conforme listados no item `2.2` do desafio. De qualquer modo, fica aqui um resumo dos endpoints principais.
 
-Este é o endpoint que irá receber as Transações. Cada transação consiste de um `valor` e uma `dataHora` de quando ela aconteceu:
 
+#### Inserir transações
+Insere uma transação no banco de dados
+
+endpoint: `POST` `/transacao`
+exemplo de body: 
 ```json
 {
     "valor": 123.45,
@@ -51,83 +65,32 @@ Este é o endpoint que irá receber as Transações. Cada transação consiste d
 }
 ```
 
-Os campos no JSON acima significam o seguinte:
+#### Limpar transações
+Apaga todas as transações do bando de dados.
 
-| Campo      | Significado                                                   | Obrigatório? |
-|------------|---------------------------------------------------------------|--------------|
-| `valor`    | **Valor em decimal com ponto flutuante** da transação         | Sim          |
-| `dataHora` | **Data/Hora no padrão ISO 8601** em que a transação aconteceu | Sim          |
+endpoint: `DELETE` `/transacao`
 
->**Dica:** O Spring Boot, por padrão, consegue compreender datas no padrão ISO 8601 sem problemas. Experimente utilizar um atributo do tipo `OffsetDateTime`!
+#### Calcular estatísticas
+Retorna as estatísticas das transações que ocorreram nos últimos 60 segundos (padrão)
+endpoint: `GET` `/estatistica`
 
-A API só aceitará transações que:
+Para outros intervalos de tempo, utilize o parâmetro `segundos=` + a quantidade de segundos desejada
+exemplo: `GET` `/estatistica?segundos=999999999`
 
-1. Tenham os campos `valor` e `dataHora` preenchidos
-2. A transação **NÃO DEVE** acontecer no futuro
-3. A transação **DEVE** ter acontecido a qualquer momento no passado
-4. A transação **NÃO DEVE** ter valor negativo
-5. A transação **DEVE** ter valor igual ou maior que `0` (zero)
+### Endpoints opcionais (saúde e observabilidade)
 
-Como resposta, espera-se que este endpoint responda com:
+#### Receber dados prometheus
+Recebe dados brutos diretamente do Micrometer-Prometheus
+endpoint: `GET` `/actuator/prometheus`
 
-- `201 Created` sem nenhum corpo
-  - A transação foi aceita (ou seja foi validada, está válida e foi registrada)
-- `422 Unprocessable Entity` sem nenhum corpo
-  - A transação **não** foi aceita por qualquer motivo (1 ou mais dos critérios de aceite não foram atendidos - por exemplo: uma transação com valor menor que `0`)
-- `400 Bad Request` sem nenhum corpo
-  - A API não compreendeu a requisição do cliente (por exemplo: um JSON inválido)
+### Painel Grafana
+O painel admin Grafana pode ser acessado em [http://localhost:3000/](http://localhost:3000/).
 
-#### 2.2.2. Limpar Transações: `DELETE /transacao`
+login:`admin`
+senha:`admin`
 
-Este endpoint simplesmente **apaga todos os dados de transações** que estejam armazenados.
+>Observação: A senha de acesso pode ser alterada em `docker-compose.yml`
 
-Como resposta, espera-se que este endpoint responda com:
+Um dash-board contendo as estatísticas do spring-boot e métricas dos endpoints está disponível em [http://localhost:3000/d/OS7-NUiGz/spring-boot-statistics-and-endpoint-metrics](http://localhost:3000/d/OS7-NUiGz/spring-boot-statistics-and-endpoint-metrics)
 
-- `200 OK` sem nenhum corpo
-  - Todas as informações foram apagadas com sucesso
 
-#### 2.2.3. Calcular Estatísticas: `GET /estatistica`
-
-Este endpoint deve retornar estatísticas das transações que **aconteceram nos últimos 60 segundos (1 minuto)**. As estatísticas que devem ser calculadas são:
-
-```json
-{
-    "count": 10,
-    "sum": 1234.56,
-    "avg": 123.456,
-    "min": 12.34,
-    "max": 123.56
-}
-```
-
-Os campos no JSON acima significam o seguinte:
-
-|  Campo  | Significado                                                   | Obrigatório? |
-|---------|---------------------------------------------------------------|--------------|
-| `count` | **Quantidade de transações** nos últimos 60 segundos          | Sim          |
-| `sum`   | **Soma total do valor** transacionado nos últimos 60 segundos | Sim          |
-| `avg`   | **Média do valor** transacionado nos últimos 60 segundos      | Sim          |
-| `min`   | **Menor valor** transacionado nos últimos 60 segundos         | Sim          |
-| `max`   | **Maior valor** transacionado nos últimos 60 segundos         | Sim          |
-
->**Dica:** Há um objeto no Java 8+ chamado `DoubleSummaryStatistics` que pode lhe ajudar ou servir de inspiração.
-
-Como resposta, espera-se que este endpoint responda com:
-
-- `200 OK` com os dados das estatísticas
-  - Um JSON com os campos `count`, `sum`, `avg`, `min` e `max` todos preenchidos com seus respectivos valores
-  - **Atenção!** Quando não houverem transações nos últimos 60 segundos considere todos os valores como `0` (zero)
-
-## 4. Extras
-
-Vamos propôr a seguir alguns desafios extras caso você queira testar seus conhecimentos ao máximo! Nenhum desses requisitos é obrigatório, mas são desejados e podem ser um diferencial!
-
-1. **Testes automatizados:** Sejam unitários e/ou funcionais, testes automatizados são importantes e ajudam a evitar problemas no futuro. Se você fizer testes automatizados, atente-se na efetividade dos seus testes! Por exemplo, testar apenas os "caminhos felizes" não é muito efetivo.
-2. **Containerização:** Você consegue criar meios para disponibilizar sua aplicação como um container? _OBS: Não é necessário publicar o container da sua aplicação!_
-3. **Logs:** Sua aplicação informa o que está acontecendo enquanto ela trabalha? Isso é útil para ajudar as pessoas desenvolvedoras a solucionar eventuais problemas que possam ocorrer.
-4. **Observabilidade:** Sua API tem algum endpoint para verificação da saúde da aplicação (healthcheck)?
-5. **Performance:** Você consegue estimar quanto tempo sua aplicação gasta para calcular as estatísticas?
-6. **Tratamento de Erros:** O Spring Boot dá às pessoas desenvolvedoras ferramentas para se melhorar o tratamento de erros padrão. Você consegue alterar os erros padrão para retornar _quais_ erros ocorreram?
-7. **Documentação da API:** Você consegue documentar sua API? Existem [ferramentas](https://swagger.io/) e [padrões](http://raml.org/) que podem te ajudar com isso!
-8. **Documentação do Sistema:** Sua aplicação provavelmente precisa ser construída antes de ser executada. Você consegue documentar como outra pessoa que pegou sua aplicação pela primeira vez pode construir e executar sua aplicação?
-9. **Configurações:** Você consegue deixar sua aplicação configurável em relação a quantidade de segundos para calcular as estatísticas? Por exemplo: o padrão é 60 segundos, mas e se o usuário quiser 120 segundos?
